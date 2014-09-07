@@ -6,12 +6,12 @@ Exemplo de projeto utilizando Grunt com Karma/Jasmine, jsHint, Concat, uglify e 
 Este projeto visa uma padronização de estrutura de arquivos e pastas para o desenvolvimento de aplicações HTML5/Javascript, AngularJs e Bootstrap,
 utilizando como ferramenta de construção e distribuição o GRUNT.
 
-# NPM's utilizados no projeto
-  - Ver arquivo package.json
+- NPM's utilizados no projeto
+    Ver arquivo package.json
 
 - Pre-Requisitos:
-    # NodeJS
-    # GRUNT
+     NodeJS
+     GRUNT
 
  - Distribuição do projeto:
 
