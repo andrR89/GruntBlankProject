@@ -1,0 +1,96 @@
+<div class="alert alert-danger" ng-show="compraForm.produto.$invalid && compraForm.produto.$dirty">
+    Selecione o produto.
+</div>
+<div class="alert alert-danger" ng-hide="compraForm.quantidade.$valid || compraForm.quantidade.$pristine">
+    Indique a quantidade.
+</div>
+<div id="conteudo">    
+    <div id="listaDeProdutos">
+        <h3>Produtos</h3>
+        <input type="text" class="form-control" placeholder="Digite o item que esta buscando..." ng-model="criterio" />
+        <table class="table table-bordered">
+            <tr>
+                <th><a href="" ng-click="ordenarPor('descricao')">Descrição</a></th>
+                <th><a href="" ng-click="ordenarPor('preco')">Preço</a></th>
+            </tr>
+            <tr ng-repeat="produto in lanchonete.produtos| filter:{descricao: criterio} | orderBy:campoOrderBy:reverse">
+                <td><a href="#/item/{{produto.id}}">{{produto.descricao}}</a></td>
+                <td>{{produto.preco| currency}}</td>
+            </tr>
+        </table>
+
+        <div id="pedidos" ng-show="lanchonete.pedidosExibir.length > 0">
+            <h4>Pedidos realizados:</h4>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Pedido</th>
+                    <th>Total</th>
+                </tr>
+
+                <tr ng-repeat="pedido in lanchonete.pedidosExibir">
+                    <td><a href="" ng-click="exibirDetalhesPedido(pedido)">#{{$index}}</a></td>
+                    <td>{{pedido.quantidade * pedido.item.preco| currency}}</td>
+                </tr>
+            </table>
+            <paginator data="lanchonete.pedidos" call="irParaPagina(pagina)"></paginator>
+        </div>
+    </div>
+    <div id="coluna2">
+        <div id="compra">
+            <h3>Comprar</h3>
+            <form name="compraForm" novalidate>
+                <select class="form-control" name="produto" ng-model="item.produto" ng-options="produto.descricao for produto in lanchonete.produtos" ng-required="true">
+                    <option value="">Selecione...</option>
+                </select>
+                <input class="form-control" name="quantidade" type="number" ng-model="item.quantidade" maxlength="2" size="1" placeholder="Qtd." ng-required="true" ng-pattern="/^\d+$/"/>
+            </form>
+            <button ng-click="adicionarItemAoCarrinho(item)" ng-disabled="compraForm.$invalid" class="btn btn-success">Adicionar</button>
+        </div>
+        <div id="carrinho">
+            <h3>Carrinho: </h3>
+            <span ng-show="lanchonete.carrinho.produtos.length == 0">Carrinho vazio...</span>
+            <div ng-show="lanchonete.carrinho.produtos.length > 0">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Total</th>
+                        <th>Ação</th>
+                    </tr>
+                    <tr ng-repeat="pedido in lanchonete.carrinho.produtos">
+                        <td><accordion title="{{pedido.produto.descricao}}"><img src="{{pedido.produto.imagem}}" /></accordion></td>
+                    <td>{{pedido.quantidade}}</td>
+                    <td>{{pedido.produto.preco| currency}}</td>
+                    <td>{{pedido.produto.preco * pedido.quantidade| currency}}</td>
+                    <td><a href="" ng-click="cancelarProduto(pedido)" class="glyphicon glyphicon-remove"></a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><strong>Total do pedido:</strong></td>
+                        <td colspan="2">{{lanchonete.carrinho.total| currency}}</td>
+                    </tr>
+                </table>
+                <button ng-click="finalizarPedido()" class="btn btn-success">Finalizar Pedido</button>
+            </div>
+        </div>
+
+        <div id="detalhesPedido" style="position:fixed; bottom: 20px;" ng-show="detalhesPedido">
+            <h4>Detalhes do Pedido - Realizado em: {{detalhesPedido.dataPedido| date:"dd/MM/yyyy hh:mm"}}</h4>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>{{detalhesPedido.item.descricao}}</td>
+                    <td>{{detalhesPedido.quantidade}}</td>
+                    <td>{{detalhesPedido.item.preco| currency}}</td>
+                    <td>{{detalhesPedido.item.preco * detalhesPedido.quantidade| currency}}</td>
+                </tr>
+            </table>
+            <a href="" ng-click="fecharDetalhesPedido()">Fechar</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+body {
+    margin:50px 0px; 
+    padding:0px;
+    text-align:center;
+    height: 100%;
+}
+#conteudo {
+    width:70%;
+    margin:0px auto;
+    text-align:left;
+    height: 100%;
+}
+#listaDeProdutos {
+    width: 50%;
+    float:left;
+    height: 100%;
+}
+#compra select {
+    width: 70%;
+    float:left;
+    margin-right: 15px;
+}
+#compra form {
+    float: left;
+    width: 70%;
+}
+#compra input {
+    width: 20%;
+}
+#coluna2 {
+    width: 48%;
+    float: right;
+    margin:0px auto;
+}
+.alert {
+    position:absolute;
+    top:0;
+    left:0;
+    margin:0 0 0 0;
+    width: 100%;
+}
+.alert-danger{
+    margin:0 0 0 0;
+}
