@@ -10,6 +10,8 @@ call npm install grunt-contrib-connect --save-dev
 call npm install grunt-contrib-copy --save-dev
 call npm install grunt-contrib-htmlmin --save-dev
 call npm install grunt-contrib-cssmin --save-dev
+call npm install karma-chrome-launcher --save-dev
+call npm install karma-jasmine --save-dev
 echo "Grunt e tasks instalados com sucesso!"
 pause
 exit
