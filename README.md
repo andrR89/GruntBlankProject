@@ -14,8 +14,10 @@ utilizando como ferramenta de construção e distribuição o GRUNT.
      GRUNT
      Karma
  - Após instalar o NodeJS, digite:
+ 
     `npm install -g grunt`
  - Para instalar o Karma, digite: (Para execução em windows, é necessário ser a versão 0.10)
+ 
     `npm install -g karma@0.10` 
  
  - Distribuição do projeto:
