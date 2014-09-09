@@ -1,3 +1,8 @@
+app.controller('templateController', ['$scope', function($scope) {
+    $scope.templateHeader = { name: 'header', url: 'header.html'};
+    $scope.templateFooter = { name: 'footer', url: 'footer.html'};
+  }]);
+
 app.controller("itemCtrl", ['$scope','$routeParams','lanchoneteAPI' , function($scope, $routeParams, lanchoneteAPI) {
     $scope.item = lanchoneteAPI.carregarItem($routeParams.id).success(function (data, status) {
         $scope.item = data;

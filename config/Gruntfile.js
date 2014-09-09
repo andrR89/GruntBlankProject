@@ -49,6 +49,11 @@ module.exports = function(grunt) {
                         src: ['<%= pkg.sourcesDir %>*/*.html'],
                         dest: '<%= pkg.garbageDir %>'
                     },
+                     {
+                        expand: true,
+                        src: ['<%= pkg.sourcesDir %>*.html', '!<%= pkg.sourcesDir %>index.html', '!<%= pkg.sourcesDir %>index_prod.html'],
+                        dest: '<%= pkg.garbageDir %>'
+                    },
                     {
                         expand: true,
                         src: ['<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.html'],
@@ -80,7 +85,7 @@ module.exports = function(grunt) {
                 files: [
                     // outros ressources
                     {
-                        src: ['<%= pkg.sourcesDir %>*/*', '<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*', '!<%= pkg.sourcesDir %>*/*.html', '!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.html', '!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.js', '!<%= pkg.sourcesDir %>*/*.js', '!<%= pkg.sourcesDir %><%= pkg.distDir %>*', '!<%= pkg.sourcesDir %>node_modules/*', '!<%= pkg.sourcesDir %>app/*', '!<%= pkg.sourcesDir %><%= pkg.libDir %>*'],
+                        src: ['<%= pkg.sourcesDir %>*/*', '<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*', '!<%= pkg.sourcesDir %>*/*.html', '!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.html','!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.css', '!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.js', '!<%= pkg.sourcesDir %>*/*.js', '!<%= pkg.sourcesDir %><%= pkg.distDir %>*', '!<%= pkg.sourcesDir %>node_modules/*', '!<%= pkg.sourcesDir %>app/*', '!<%= pkg.sourcesDir %><%= pkg.libDir %>*'],
                         dest: '<%= pkg.garbageDir %>'
                     },
                     // libs
@@ -133,5 +138,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     
     grunt.registerTask('qa',['karma:dev', 'jshint'])
-    grunt.registerTask('dist', ['clean:start', /**'jshint', 'karma:dev', */'concat', 'uglify', 'copy:create', 'htmlmin', 'cssmin', 'copy:dist','clean:finish', /**'connect:dist:keepalive'*/]);
+    grunt.registerTask('dist', ['clean:start', /**'jshint', 'karma:dev', */'concat', 'uglify', 'copy:create', 'htmlmin', 'cssmin', 'copy:dist','clean:finish', 'connect:dist:keepalive']);
 }           

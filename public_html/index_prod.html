@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html ng-app="lanchoneteApp">
-<head>
-	<meta charset='utf-8'>
-	<title>Teste angular</title>
-	<script src="lib/angular.min.js"></script>
-	<script src="lib/angular-locale_pt-br.js"></script>
-	<script src="lib/angular-route.min.js"></script>
-	<script src="lib/jquery-1.11.1.min.js"></script>
-	<script src="lib/bootstrap.min.js"></script>
-	<script src="scripts.min.js"></script>
-	<link rel="stylesheet" href="lib/bootstrap.min.css">
-	<link rel="stylesheet" href="lib/bootstrap-theme.min.css">
+    <head>
+        <meta charset='utf-8'>
+        <title>Teste angular</title>
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-locale_pt-br.js"></script>
+        <script src="lib/angular-route.min.js"></script>
+        <script src="lib/jquery-1.11.1.min.js"></script>
+        <script src="lib/bootstrap.min.js"></script>
+        <script src="scripts.min.js"></script>
+        <link rel="stylesheet" href="lib/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/bootstrap-theme.min.css">
         <link rel="stylesheet" href="stylesheet.min.css">
-	<script>
-		
-</script>
-</head>
-<body>
-	<h1 style="text-align:center">Lanchonete do seu zé!</h1>
-	<div ng-view></div>
-</body>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <div ng-controller="templateController" ng-include="templateHeader.url">
+        </div>
+        <div ng-view></div>
+        <div ng-controller="templateController" ng-include="templateFooter.url">
+        </div>
+    </body>
 </html>

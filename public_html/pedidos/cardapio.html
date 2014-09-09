@@ -44,7 +44,7 @@
                 </select>
                 <input class="form-control" name="quantidade" type="number" ng-model="item.quantidade" maxlength="2" size="1" placeholder="Qtd." ng-required="true" ng-pattern="/^\d+$/"/>
             </form>
-            <button ng-click="adicionarItemAoCarrinho(item)" ng-disabled="compraForm.$invalid" class="btn btn-success">Adicionar</button>
+            <button id="botaoSubmit" ng-click="adicionarItemAoCarrinho(item)" ng-disabled="compraForm.$invalid" class="btn btn-success">Adicionar</button>
         </div>
         <div id="carrinho">
             <h3>Carrinho: </h3>
