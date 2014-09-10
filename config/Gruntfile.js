@@ -100,7 +100,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        src: ['<%= pkg.libDir %>**/*.ttf'],
+                        src: ['<%= pkg.libDir %>**/*.ttf', '<%= pkg.libDir %>**/*.woff'],
                         dest: '<%= pkg.garbageDir %>/fonts'
                     },
                     // Copia todo o build para o diretorio /dist
