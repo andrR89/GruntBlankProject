@@ -1,2 +1,4 @@
 /dist/
 /config/node_modules/
+/.idea/
+/nbproject/

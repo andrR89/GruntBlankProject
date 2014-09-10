@@ -1,0 +1,5 @@
+{
+	"proxy":"http://user:pass@proxy.nexxera.com:3128",
+    "https-proxy":"http://andre.rogerio:Urrgh!02@proxy.nexxera.com:3128",
+	"directory": "../lib"
+}

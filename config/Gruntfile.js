@@ -93,15 +93,15 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        src: ['<%= pkg.libDir %>*/*.min.*', '<%= pkg.libDir %>*.min.*', '<%= pkg.libDir %>*/*/*.min.*', '<%= pkg.libDir %><%= pkg.angularI18NFolder %>*<%= pkg.angularLocale %>*'],
+                        src: ['<%= pkg.libDir %>*/*.min.js*', '<%= pkg.libDir %>*.min.js*', '<%= pkg.libDir %>**/*.min.*', '!<%= pkg.libDir %>**/*.min*.map', '!<%= pkg.libDir %>**/*.min*.gzip', '<%= pkg.libDir %><%= pkg.angularI18NFolder %>*<%= pkg.angularLocale %>*'],
                         dest: '<%= pkg.garbageDir %>/lib'
                     },
-                    // fonts bootstrap
+                    // libs
                     {
                         expand: true,
                         flatten: true,
-                        src: ['<%= pkg.libDir %>*/*.min.*', '<%= pkg.libDir %>*.min.*', '<%= pkg.libDir %>*/*/*.min.*', '<%= pkg.libDir %><%= pkg.angularI18NFolder %>*<%= pkg.angularLocale %>*'],
-                        dest: '<%= pkg.garbageDir %>/lib'
+                        src: ['<%= pkg.libDir %>**/*.ttf'],
+                        dest: '<%= pkg.garbageDir %>/fonts'
                     },
                     // Copia todo o build para o diretorio /dist
                     {
@@ -138,6 +138,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('qa', ['karma:dev', 'jshint'])
-    grunt.registerTask('dist', ['clean:start', /**'jshint', 'karma:dev', */'concat', 'uglify', 'copy:create', 'htmlmin', 'cssmin', 'copy:dist', 'clean:finish', 'connect:dist:keepalive']);
+    grunt.registerTask('qa', ['karma:dev', 'jshint']);
+    grunt.registerTask('dist', ['clean:start', 'concat', 'uglify', 'copy:create', 'htmlmin', 'cssmin', 'copy:dist', 'clean:finish']);
+    grunt.registerTask('execute-dist', ['dist', 'connect:dist:keepalive']);
 }           

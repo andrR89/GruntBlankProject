@@ -17,6 +17,7 @@
     "karma": "^0.12.23"
   },
   "devDependencies": {
+    "grunt-bower": "^0.14.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-connect": "^0.8.0",
@@ -36,8 +37,8 @@
   "author": "andre.rogerio",
   "license": "ISC",
   "distDir": "../dist/",
-  "sourcesDir": "../public_html/",
-  "garbageDir": "public_html/",
+  "sourcesDir": "../src/",
+  "garbageDir": "src/",
   "sharedDir": "shared/",
   "libDir": "../lib/",
   "indexFile": "index_prod.html",
@@ -45,6 +46,6 @@
   "concatJsFile": "scripts.js",
   "minCssFile": "stylesheet.min.css",
   "minJsFile": "scripts.min.js",
-  "angularI18NFolder": "angular/i18n/",
+  "angularI18NFolder": "angular-i18n/",
   "angularLocale": "pt-br"
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="lanchoneteApp">
+    <head>
+        <meta charset='utf-8'>
+        <title>Teste angular</title>
+        <script src="../lib/angular/angular.js"></script>
+        <script src="../lib/angular-i18n/angular-locale_pt-br.js"></script>
+        <script src="../lib/angular-route/angular-route.js"></script>
+        <script src="../lib/jquery/dist/jquery.min.js"></script>
+        <script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="app/app.js"></script>
+        <script src="pedidos/service.js"></script>
+        <script src="shared/filters/filters.js"></script>
+        <script src="pedidos/controller.js"></script>
+        <script src="pedidos/route.js"></script>
+        <script src="shared/directives/directive.js"></script>
+        <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="shared/stylesheet/estilos.css">
+        <!-- Custom styles for this template -->
+        <link href="shared/stylesheet/sticky-footer-navbar.css" rel="stylesheet">
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <div ng-controller="templateController" ng-include="templateHeader.url">
+        </div>
+        <div ng-view></div>
+        <div ng-controller="templateController" ng-include="templateFooter.url">
+        </div>
+    </body>
+    
+</html>

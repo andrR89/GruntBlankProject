@@ -1,0 +1,15 @@
+{
+  "name": "Grunt Project Blank",
+  "description": "A starter project for AngularJS using Grunt to build.",
+  "version": "1.0.0",
+  "homepage": "github.com/andrR89/GruntBlankProject",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+	"jquery": "1.11.1",
+	"bootstrap": "3.2.0",
+	"jasmine":"2.0.4",
+    "angular-i18n":"1.2.x",
+      "angular-route":"1.2.x"
+  }
+}
