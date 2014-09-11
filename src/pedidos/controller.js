@@ -90,6 +90,7 @@ app.controller("lanchoneteCtrl", ['$scope', '$http', 'lanchoneteAPI',  function(
         }).error(function (data,status) {
             console.error(data);
         });
+
     };
 
     $scope.exibirDetalhesPedido = function(pedido) {
