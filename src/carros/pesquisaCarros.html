@@ -1,0 +1,33 @@
+
+<div class="panel panel-default" >
+    <div class="panel-heading">
+        Carros 
+    </div>
+    <h3><span ng-show="listaCarros.length == 0" class="label label-warning">
+            Nenhum Carro Adicionado!
+        </span></h3>
+    <div class="panel-body" ng-show="listaCarros.length > 0">
+        <div class="table-responsive">
+            <table class="table table-condensed">
+                <tr>
+                    <th>Ano</th>
+                    <th>Modelo</th>
+                    <th>Opções</th>
+                </tr>
+                <tr ng-repeat="carro in listaCarros">
+                    <td>{{carro.ano}}</td>
+                    <td>{{carro.modelo}}</td>
+                    <td><a href="" ng-click="excluirCarro(carro)" class="glyphicon glyphicon-remove"></a>
+                        <a href="" ng-click="editarCarro(carro)" class="glyphicon glyphicon glyphicon-pencil"></a>
+                    </td>
+                </tr>
+                <tfoot>
+                <td colspan="2"><strong>Total de Carros no sistema:</strong></td>
+                <td colspan="1">{{listaCarros.length}}</td>
+                </tfoot>
+            </table>
+            {{carro.ano}}
+            {{carro.modelo}}
+        </div>
+    </div>
+</div>

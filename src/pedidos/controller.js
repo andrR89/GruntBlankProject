@@ -1,6 +1,8 @@
 app.controller('templateController', ['$scope', function($scope) {
     $scope.templateHeader = { name: 'header', url: 'header.html'};
     $scope.templateFooter = { name: 'footer', url: 'footer.html'};
+    $scope.templateCadastroCarro = { name: 'cadastroCarro', url: 'carros/cadastroCarros.html'};
+    $scope.templatePesquisaCarro = { name: 'PesquisaCarro', url: 'carros/pesquisaCarros.html'};
   }]);
 
 app.controller("itemCtrl", ['$scope','$routeParams','lanchoneteAPI' , function($scope, $routeParams, lanchoneteAPI) {

@@ -24,12 +24,15 @@
 
         </script>
     </head>
+
     <body>
-        <div ng-controller="templateController" ng-include="templateHeader.url">
+        <div class="container" ng-controller="templateController">
+            <div ng-include="templateHeader.url">
+            </div>
+            <div ng-view></div>
         </div>
-        <div ng-view></div>
-        <div ng-controller="templateController" ng-include="templateFooter.url">
+        <div ng-include="templateFooter.url">
         </div>
     </body>
-    
+
 </html>

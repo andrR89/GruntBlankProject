@@ -1,36 +1,7 @@
 <!DOCTYPE html>
 
-<div>
-    <span ng-show="listaCarros.length == 0">Nenhum Carro Adicionado!</span>
-
-    <div ng-show="listaCarros.length > 0">
-        <table class="table table-bordered">
-            <tr>
-                <th>Ano</th>
-                <th>Modelo</th>
-            </tr>
-            <tr ng-repeat="carro in listaCarros">
-                <td>{{carro.ano}}</td>
-                <td>{{carro.modelo}}</td>
-            </tr>
-            <tr>
-                <td colspan="2"><strong>Total de Carros no sistema:</strong></td>
-                <td colspan="1">{{listaCarros.length}}</td>
-            </tr>
-        </table>
+<div class="container-fluid row" ng-controller="carrosController">
+    <div class="col-xs-12 col-md-8" ng-include="templatePesquisaCarro.url">
     </div>
-</div>
-<div>
-    <form name="carroForm" novalidate>
-        <select class="form-control" name="ano" ng-model="carro.ano" ng-options="carro.ano for ano in anos" ng-required="true">
-            <option value="">Selecione o Ano</option>
-        </select>
-        <input class="form-control" name="Ano" type="number" ng-model="carro.ano" maxlength="4" size="1"
-               placeholder="Ano:" ng-required="true" ng-pattern="/^\d+$/"/>
-        <input class="form-control" name="Modelo" ng-model="carro.modelo" maxlength="50" placeholder="Modelo:"
-               ng-required="true" ng-pattern="/^\d+$/"/>
-    </form>
-    <button id="botaoSubmit" ng-click="adicionarCarro(carro)"
-            class="btn btn-success">Adicionar
-    </button>
+    <div class="col-xs-12 col-md-4" ng-include="templateCadastroCarro.url"></div>
 </div>

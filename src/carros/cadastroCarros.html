@@ -1,0 +1,32 @@
+
+<div class="panel panel-default" >
+    <div class="panel-heading">
+        Carros 
+    </div>
+    <div class="panel-body">
+        <form name="carroForm" novalidate>
+            <ul class="list-group" ng-show="carroForm.$invalid">
+                <li class="list-group-item list-group-item-danger" ng-hide="carroForm.modelo.$valid || carroForm.modelo.$pristine">Insira o modelo.</li>
+                <li class="list-group-item list-group-item-danger" ng-show="carroForm.ano.$invalid && carroForm.ano.$dirty">Selecione o ano.</li>
+            </ul>
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon glyphicon glyphicon-plus"></span>
+                <select class="form-control" name="ano" ng-model="carro.ano" ng-options="ano for ano in anos" ng-required="true">
+                    <option value="">Selecione o Ano</option>
+                </select>
+            </div>
+
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon glyphicon glyphicon-plus"></span>
+                <input class="form-control" name="modelo" ng-model="carro.modelo" maxlength="50" placeholder="Modelo:"
+                       ng-required="true"/>
+            </div>
+
+            <button ng-click="adicionarCarro(carro)"
+                    class="btn btn-info" ng-disabled="carroForm.$invalid"> Adicionar
+            </button>
+        </form>
+
+
+    </div>
+</div>
