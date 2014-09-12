@@ -1,14 +1,14 @@
 app.service("lanchoneteAPI", ['$http', function($http) {
     this.carregarCardapio = function() {
-        return $http.get("https://devweb.nexxera.com/pedidosweb/cardapio");
+        return $http.get("pedidos/cardapio.json");
     };
     this.carregarPedidos = function() {
-        return $http.get("https://devweb.nexxera.com/pedidosweb/pedidos");
+        return $http.get("pedidos/pedidos.json");
     };
     this.salvarPedido = function(pedido) {
-        return $http.post("https://devweb.nexxera.com/pedidosweb/pedidos", pedido);
+        return null;
     };
     this.carregarItem = function(idItem) {
-        return $http.get("https://devweb.nexxera.com/pedidosweb/item/" +  idItem);
+        return null;
     };
 }]);

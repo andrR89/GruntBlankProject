@@ -1,10 +1,3 @@
-app.controller('templateController', ['$scope', function($scope) {
-    $scope.templateHeader = { name: 'header', url: 'header.html'};
-    $scope.templateFooter = { name: 'footer', url: 'footer.html'};
-    $scope.templateCadastroCarro = { name: 'cadastroCarro', url: 'carros/cadastroCarros.html'};
-    $scope.templatePesquisaCarro = { name: 'pesquisaCarro', url: 'carros/pesquisaCarros.html'};
-  }]);
-
 app.controller("itemCtrl", ['$scope','$routeParams','lanchoneteAPI' , function($scope, $routeParams, lanchoneteAPI) {
     $scope.item = lanchoneteAPI.carregarItem($routeParams.id).success(function (data, status) {
         $scope.item = data;
@@ -59,30 +52,30 @@ app.controller("lanchoneteCtrl", ['$scope', '$http', 'lanchoneteAPI',  function(
     };
 
     $scope.finalizarPedido = function () {
-        $scope.lanchonete.carrinho.numeroPedido = $scope.lanchonete.pedidos.length;
-        $scope.lanchonete.carrinho.dataPedido = new Date();
-
-        for (var i in $scope.lanchonete.carrinho.produtos) {
-            var pedido = {};
-            pedido.quantidade = $scope.lanchonete.carrinho.produtos[i].quantidade;
-            pedido.item = {
-                id:$scope.lanchonete.carrinho.produtos[i].produto.id,
-                descricao:$scope.lanchonete.carrinho.produtos[i].produto.descricao,
-                preco:$scope.lanchonete.carrinho.produtos[i].produto.preco,
-                imagem:$scope.lanchonete.carrinho.produtos[i].produto.imagem,
-                detalhes:$scope.lanchonete.carrinho.produtos[i].produto.detalhes
-            };
-
-            lanchoneteAPI.salvarPedido(pedido).success(function (data, status) {
-                console.log("OK!");
-                $scope.carregarPedidos();
-            }).error(function (data,status) {
-                console.error(data);
-            });
-        }
-        $scope.carregarPedidos();
-        $scope.lanchonete.carrinho = {produtos: [], total: 0};
-
+//         $scope.lanchonete.carrinho.numeroPedido = $scope.lanchonete.pedidos.length;
+//        $scope.lanchonete.carrinho.dataPedido = new Date();
+//
+//        for (var i in $scope.lanchonete.carrinho.produtos) {
+//            var pedido = {};
+//            pedido.quantidade = $scope.lanchonete.carrinho.produtos[i].quantidade;
+//            pedido.item = {
+//                id:$scope.lanchonete.carrinho.produtos[i].produto.id,
+//                descricao:$scope.lanchonete.carrinho.produtos[i].produto.descricao,
+//                preco:$scope.lanchonete.carrinho.produtos[i].produto.preco,
+//                imagem:$scope.lanchonete.carrinho.produtos[i].produto.imagem,
+//                detalhes:$scope.lanchonete.carrinho.produtos[i].produto.detalhes
+//            };
+//
+//            lanchoneteAPI.salvarPedido(pedido).success(function (data, status) {
+//                console.log("OK!");
+//                $scope.carregarPedidos();
+//            }).error(function (data,status) {
+//                console.error(data);
+//            });
+//        }
+//        $scope.carregarPedidos();
+//        $scope.lanchonete.carrinho = {produtos: [], total: 0};
+        alert("Não Implementado!")
     };
 
     $scope.carregarPedidos = function() {

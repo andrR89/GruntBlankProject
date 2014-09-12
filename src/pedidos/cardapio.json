@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "descricao": "Coca-Cola",
+        "preco": 5.0,
+        "imagem": null,
+        "detalhes": null
+    },
+    {
+        "id": 2,
+        "descricao": "Água",
+        "preco": 4.0,
+        "imagem": null,
+        "detalhes": null
+    },
+    {
+        "id": 3,
+        "descricao": "Whisky",
+        "preco": 12.0,
+        "imagem": null,
+        "detalhes": null
+    }
+]
