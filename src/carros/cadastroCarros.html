@@ -4,11 +4,12 @@
         Carros 
     </div>
     <div class="panel-body">
+        <ul class="list-group" ng-show="carroForm.$invalid">
+            <li class="list-group-item list-group-item-danger" ng-hide="carroForm.modelo.$valid || carroForm.modelo.$pristine">Insira o modelo.</li>
+            <li class="list-group-item list-group-item-danger" ng-show="carroForm.ano.$invalid && carroForm.ano.$dirty">Selecione o ano.</li>
+        </ul>
         <form name="carroForm" novalidate>
-            <ul class="list-group" ng-show="carroForm.$invalid">
-                <li class="list-group-item list-group-item-danger" ng-hide="carroForm.modelo.$valid || carroForm.modelo.$pristine">Insira o modelo.</li>
-                <li class="list-group-item list-group-item-danger" ng-show="carroForm.ano.$invalid && carroForm.ano.$dirty">Selecione o ano.</li>
-            </ul>
+            {{carroForm.modelo.$pristine}}
             <div class="input-group input-group-sm">
                 <span class="input-group-addon glyphicon glyphicon-plus"></span>
                 <select class="form-control" name="ano" ng-model="carro.ano" ng-options="ano for ano in anos" ng-required="true">

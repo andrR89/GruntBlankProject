@@ -21,6 +21,8 @@ app.controller('carrosController', ['$scope', function($scope) {
                 $scope.listaCarros.splice($scope.editIndex, 1,angular.copy(carro));
                 $scope.editIndex = -1;
             }
+            console.log($scope);
+            $scope.$$childTail.carroForm.$setPristine();
         };
 
         $scope.carregarAnos = function() {
