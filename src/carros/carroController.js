@@ -4,7 +4,7 @@
 app.controller('carrosController', ['$scope', function($scope) {
 
         $scope.carroTitulo = "Carros Já";
-        $scope.carro = undefined;
+        $scope.carro = {};
         $scope.listaCarros = [];
         $scope.anos = [];
         $scope.editIndex = -1;
@@ -13,8 +13,6 @@ app.controller('carrosController', ['$scope', function($scope) {
                 if ($scope.editIndex === -1)
             {
                 $scope.listaCarros.push(angular.copy(carro));
-                carro.ano = 0;
-                carro.modelo = "";
                 delete $scope.carro;
                 $scope.editIndex = -1;
             }
