@@ -1,191 +1,26 @@
 [
     {
-        "ano": 1964,
-        "modelo": "350GT",
-        "imageURL": "http://www.provocateur-magazin.de/uploads/pics/web_1963_350_GT_1964.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
+        "nome": "Audi",
+        "pais": "Alemanha"
     },
     {
-        "ano": 1966,
-        "modelo": "400GT",
-        "imageURL": "http://www.blog-moteur.com/wp-content/uploads/2011/05/Divers_McCartney_Lamborghini_400_GT_500.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
+        "nome": "BMW",
+        "pais": "Alemanha"
     },
     {
-        "ano": 1968,
-        "modelo": "Miura",
-        "imageURL": "http://db2.stb.s-msn.com/i/DC/316B2318AD70EDB6C43BAA823B5EB.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
+        "nome": "Lamborghini",
+        "pais": "Itália"
     },
     {
-        "ano": 1969,
-        "modelo": "Espada",
-        "imageURL": "http://lamborghinicollection.weebly.com/uploads/1/1/3/6/11363916/303632_orig.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
+        "nome": "Mercedes",
+        "pais": "Alemanha"
     },
     {
-        "ano": 1969,
-        "modelo": "Islero",
-        "imageURL": "http://media-cache-ec0.pinimg.com/736x/1b/a3/ca/1ba3cad521567407d49a83136a5da280.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
+        "nome": "Pagani",
+        "pais": "Itália"
     },
     {
-        "ano": 1970,
-        "modelo": "Jarama",
-        "imageURL": "http://doonup.in/wp-content/uploads/2013/10/Lamborghini-Jarama-400GT.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 1973,
-        "modelo": "Urraco",
-        "imageURL": "http://doonup.in/wp-content/uploads/2013/09/Lamborghini-Urraco.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 1974,
-        "modelo": "Countach",
-        "imageURL": "http://www.analogstereo.com/images/om/lamborghini_countach.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 1976,
-        "modelo": "Silhouette",
-        "imageURL": "http://lamborghinicollection.weebly.com/uploads/1/1/3/6/11363916/1066632_orig.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 1981,
-        "modelo": "Jalpa",
-        "imageURL": "http://www.rankopedia.com/CandidatePix/29309.gif",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 1988,
-        "modelo": "Countach 25th Anniversary",
-        "imageURL": "http://db2.stb.s-msn.com/i/96/967E89B14D819F65BAF3E87530B1EB.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 1990,
-        "modelo": "Diablo",
-        "imageURL": "http://bibipedia.org/upload/gallery/images/Le_catalogue_des_voitures/Lamborghini/Diablo/Diablo_se_30_1994/preview-Lamborghini_Diablo_se_30_1994_3.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 2000,
-        "modelo": "Murciélago",
-        "imageURL": "http://freeautotraders.com/wp-content/uploads/2013/07/KGrHqJlwFHDHVGtbBR6OiwSd0w60_12-500x350.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 2003,
-        "modelo": "Gallardo",
-        "imageURL": "http://autodrive.info/images/lamborghini-gallardo-cena-komplektacii_0.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 2008,
-        "modelo": "Reventón",
-        "imageURL": "http://www.autoblog.gr/wp-content/uploads/2009/09/Lamborghini-Reventon-Roadster1.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 2008,
-        "modelo": "Estorque",
-        "imageURL": "http://www.wheeltronix.com/wp-content/uploads/2008/10/lamborghini-estoque-1.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 2011,
-        "modelo": "Aventador",
-        "imageURL": "http://img2.news.zing.vn/2012/07/19/1-30.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 2012,
-        "modelo": "Sesto Elemento",
-        "imageURL": "http://img.news.zing.vn/img/660/t660150.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 2013,
-        "modelo": "Veneno",
-        "imageURL": "http://transport.asiaone.com/sites/default/files/styles/gallery_popup/public/original_images/May2014/lamboveneno2.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 2013,
-        "modelo": "Egoista",
-        "imageURL": "http://p4.s1sf.com/au/0/ud/1/5573/201306060300191.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }
-    },
-    {
-        "ano": 2014,
-        "modelo": "Huracán",
-        "imageURL": "http://nowetrendy.pl/html/images/news/800/Lamborghini_Huracan_2.jpg",
-        "fabricante": {
-            "nome": "Lamborghini",
-            "pais": "Itália"
-        }   
+        "nome": "Porsche",
+        "pais": "Alemanha"
     }
 ]

@@ -1,5 +1,5 @@
-app.service("carrosAPI", ['$http', function($http) {
-    this.carregarCarros = function() {
-        return $http.get("carros/carros.json");
+app.service("fabricanteAPI", ['$http', function($http) {
+    this.carregarFabricantes = function() {
+        return $http.get("carros/fabricantes.json");
     };
 }]);

@@ -7,6 +7,7 @@
         <ul class="list-group" ng-show="carroForm.$invalid">
             <li class="list-group-item list-group-item-danger" ng-hide="carroForm.modelo.$valid || carroForm.modelo.$pristine">Insira o modelo.</li>
             <li class="list-group-item list-group-item-danger" ng-show="carroForm.ano.$invalid && carroForm.ano.$dirty">Selecione o ano.</li>
+            <li class="list-group-item list-group-item-danger" ng-show="carroForm.fabricante.$invalid && carroForm.fabricante.$dirty">Selecione o Fabricante.</li>
         </ul>
         <form name="carroForm" novalidate>
             <div class="input-group input-group-sm">
@@ -21,7 +22,14 @@
                 <input class="form-control" name="modelo" ng-model="carro.modelo" maxlength="50" placeholder="Modelo:"
                        ng-required="true"/>
             </div>
-
+            
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon glyphicon glyphicon-plus"></span>
+                <select class="form-control" name="fabricante" ng-model="carro.fabricante" ng-options="fabricante.nome for fabricante in fabricantes" ng-required="true">
+                    <option value="">Selecione o Fabricante</option>
+                </select>
+            </div>
+            
             <button ng-click="adicionarCarro(carro)"
                     class="btn btn-info" ng-disabled="carroForm.$invalid"> Adicionar
             </button>

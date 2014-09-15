@@ -1,38 +1,30 @@
 /**
  * Created by andre.rogerio on 11/09/2014.
  */
-app.controller('carrosController', ['$scope', 'carrosAPI', '$location', '$anchorScroll' , function ($scope, carrosAPI, $location, $anchorScroll) {
+app.controller('carrosController', ['$scope', 'carrosAPI', '$location', '$anchorScroll', 'fabricanteAPI', function ($scope, carrosAPI, $location, $anchorScroll, fabricanteAPI) {
 
         $scope.carroTitulo = "Carros Já";
         $scope.carro = {};
+        $scope.carro.fabricante = {};
         $scope.listaCarros = [];
         $scope.anos = [];
+        $scope.fabricantes = [];
         $scope.editIndex = -1;
         $scope.campoOrderBy = "ano";
         $scope.templateCadastroCarro = {name: 'cadastroCarro', url: 'carros/cadastroCarros.html'};
         $scope.templatePesquisaCarro = {name: 'pesquisaCarro', url: 'carros/pesquisaCarros.html'};
         $scope.carroShow = {};
 
-        $scope.iniciarLista = function ()
-        {
-            carrosAPI.carregarCarros().success(function (data, status) {
-                $scope.listaCarros = data;
-            }).error(function (data, status) {
-                console.error(data);
-            });
-        };
-
         $scope.adicionarCarro = function (carro) {
             if ($scope.editIndex === -1) {
                 $scope.listaCarros.push(angular.copy(carro));
-                delete $scope.carro;
-                $scope.editIndex = -1;
             }
             else {
                 $scope.listaCarros.splice($scope.editIndex, 1, angular.copy(carro));
-                $scope.editIndex = -1;
-                delete $scope.carro;
             }
+            $scope.editIndex = -1;
+            delete $scope.carro;
+            $scope.carro = {};
             $scope.$$childTail.carroForm.$setPristine();
         };
 
@@ -45,6 +37,8 @@ app.controller('carrosController', ['$scope', 'carrosAPI', '$location', '$anchor
         $scope.excluirCarro = function (carro) {
             $scope.listaCarros.splice($scope.listaCarros.indexOf(carro), 1);
             delete $scope.carro;
+            $scope.carro = {};
+            $scope.editIndex = -1;
         };
 
         $scope.editarCarro = function (carro) {
@@ -68,18 +62,33 @@ app.controller('carrosController', ['$scope', 'carrosAPI', '$location', '$anchor
             $scope.reverse = !$scope.reverse;
             console.log($scope.reverse);
         };
-        
+
         $scope.gotoCadastro = function () {
             $location.hash('cadastro');
             $anchorScroll();
         };
-        
+
         $scope.gotoTopo = function () {
             $location.hash('topo');
             $anchorScroll();
         };
+        
+        $scope.iniciarListas = function ()
+        {
+            $scope.carregarAnos();
+            
+            carrosAPI.carregarCarros().success(function (data, status) {
+                $scope.listaCarros = data;
+            }).error(function (data, status) {
+                console.error(data);
+            });
+            
+            fabricanteAPI.carregarFabricantes().success(function (data, status) {
+                $scope.fabricantes = data;
+            }).error(function (data, status) {
+                console.error(data);
+            });
+        };
 
-
-        $scope.carregarAnos();
-        $scope.iniciarLista();
+        $scope.iniciarListas();
     }]);
