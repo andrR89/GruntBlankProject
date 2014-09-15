@@ -42,6 +42,17 @@ body {
 .alert-danger{
     margin:0 0 0 0;
 }
+
+.tdDescriptionModal{
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.tdValueModal{
+    font-weight: bolder;
+    text-align: left;
+}
+
 /* dispositivo no formato paisagem e abaixos */
 @media (max-width: 480px) {
     #listaDeProdutos {
@@ -66,9 +77,10 @@ body {
     #compra input {
         width: 100%;
     }
-    
+
     #botaoSubmit {
         width: 100% !important;
     }
-   
+
 }
+    

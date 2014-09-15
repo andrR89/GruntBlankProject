@@ -1,6 +1,6 @@
 
 <div class="panel panel-default" >
-    <div class="panel-heading">
+    <div class="panel-heading" id="cadastroCarros">
         Cadastro
     </div>
     <div class="panel-body">
@@ -9,7 +9,6 @@
             <li class="list-group-item list-group-item-danger" ng-show="carroForm.ano.$invalid && carroForm.ano.$dirty">Selecione o ano.</li>
         </ul>
         <form name="carroForm" novalidate>
-            {{carroForm.modelo.$pristine}}
             <div class="input-group input-group-sm">
                 <span class="input-group-addon glyphicon glyphicon-plus"></span>
                 <select class="form-control" name="ano" ng-model="carro.ano" ng-options="ano for ano in anos" ng-required="true">
@@ -27,7 +26,6 @@
                     class="btn btn-info" ng-disabled="carroForm.$invalid"> Adicionar
             </button>
         </form>
-
-
+        <a href="" class="visible-xs" ng-click="gotoTopo()"> Voltar ao top </a>
     </div>
 </div>

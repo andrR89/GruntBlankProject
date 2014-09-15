@@ -1,5 +1,5 @@
 {
-  "name": "Orrgh",
+  "name": "GruntBlankProject",
   "version": "0.0.1",
   "description": "Projeto Blank com as tasks dos grunt configuradas para build do projeto",
   "main": "Gruntfile.js",

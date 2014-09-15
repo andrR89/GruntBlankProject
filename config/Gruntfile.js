@@ -93,7 +93,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        src: ['<%= pkg.libDir %>*/*.min.js*', '<%= pkg.libDir %>*.min.js*', '<%= pkg.libDir %>**/*.min.*', '!<%= pkg.libDir %>**/*.min*.map', '!<%= pkg.libDir %>**/*.min*.gzip', '<%= pkg.libDir %><%= pkg.angularI18NFolder %>*<%= pkg.angularLocale %>*'],
+                        src: ['<%= pkg.libDir %>*/*.min.js*', '<%= pkg.libDir %>*.min.js*', '<%= pkg.libDir %>**/*.min.*', '!<%= pkg.libDir %>**/*.min*.gzip', '<%= pkg.libDir %><%= pkg.angularI18NFolder %>*<%= pkg.angularLocale %>*'],
                         dest: '<%= pkg.garbageDir %>/lib'
                     },
                     // libs

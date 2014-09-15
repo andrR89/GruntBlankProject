@@ -8,24 +8,61 @@
 
     <div class="panel-body" ng-show="listaCarros.length > 0">
         <div class="table-responsive">
+            <input type="text" class="form-control" placeholder="Pesquise o Carro aqui: (Ano ou modelo)" ng-model="criterio" />
             <table class="table table-condensed">
                 <tr>
-                    <th>Ano</th>
-                    <th>Modelo</th>
+                    <th class="hidden-xs"><a href="" ng-click="ordenarCarrosPor('ano')">Ano</a></th>
+                    <th><a href="" ng-click="ordenarCarrosPor('modelo')">Modelo</a></th>
                     <th>Opções</th>
                 </tr>
-                <tr ng-repeat="carro in listaCarros">
-                    <td>{{carro.ano}}</td>
-                    <td>{{carro.modelo}}</td>
+                <tr ng-repeat="carro in listaCarros| filter: criterio  | orderBy:campoOrderBy:reverse">
+                    <td class="hidden-xs">{{carro.ano}}</td>
+                    <td><a href="" ng-click="showCarro(carro)"  data-toggle="modal"  data-target="#carroModal">{{carro.modelo}}</a></td>
                     <td><a href="" ng-click="excluirCarro(carro)" class="glyphicon glyphicon-remove"></a>
                         <a href="" ng-click="editarCarro(carro)" class="glyphicon glyphicon glyphicon-pencil"></a>
                     </td>
                 </tr>
                 <tfoot>
-                <td colspan="2"><strong>Total de Carros no sistema:</strong></td>
-                <td colspan="1">{{listaCarros.length}}</td>
+                <td colspan="2" class="hidden-xs"><strong>Total de Carros no sistema:</strong></td>
+                <td colspan="1" class="hidden-xs">{{listaCarros.length}}</td>
+
+                <td colspan="2" class="visible-xs"><strong>Total de Carros: {{listaCarros.length}}</strong></td>
+
                 </tfoot>
             </table>
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="carroModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" ng-click="cleanShow();" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                <h4 class="modal-title" id="myModalLabel">{{carroShow.modelo}}</h4>
+            </div>
+            <div class="modal-body">
+                <image src="{{carroShow.imageURL}}" alt="Imagem Não encontrada!" class="hidden-xs"/>
+
+                <div class="visible-xs">
+                    <a href="{{carroShow.imageURL}}">
+                        <image src="shared/images/mamute.png" alt="Imagem Não encontrada!" />
+                    </a>
+                    <br/>
+                    Clique no Mamute para ver a Foto!
+                </div>
+
+                <h3> {{carroShow.ano}}</h3>
+            </div>
+            <div class="modal-footer">
+                <table class="table">
+                    <tr>
+                        <td class="tdDescriptionModal">Fabricante: </td>
+                        <td class="tdValueModal">{{carroShow.fabricante.nome}}</td>
+                        <td class="tdDescriptionModal">País: </td>
+                        <td class="tdValueModal">{{carroShow.fabricante.pais}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
