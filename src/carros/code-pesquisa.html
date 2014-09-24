@@ -1,0 +1,39 @@
+<pre class="prettyprint  linenums lang-scm">
+<code id="urrgh">
+&lt;ng-urrgh class="panel panel-default"&gt;
+    &lt;div class="panel-heading"&gt;
+        Pesquisa &lt;a href="" ng-click="showCarro(carro)"  data-toggle="modal"  data-target="#codeModal"&gt;(Ver Codigo Fonte)  &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;&lt;span ng-show="listaCarros.length == 0" class="label label-warning"&gt;
+            Nenhum Carro Adicionado!
+        &lt;/span&gt;&lt;/h3&gt;
+
+    &lt;div class="panel-body" ng-show="listaCarros.length &gt; 0"&gt;
+        &lt;div class="table-responsive"&gt;
+            &lt;input type="text" class="form-control" placeholder="Pesquise o Carro aqui: (Ano ou modelo)" ng-model="criterio" /&gt;
+            &lt;table class="table table-condensed"&gt;
+                &lt;tr&gt;
+                    &lt;th class="hidden-xs"&gt;&lt;a href="" ng-click="ordenarCarrosPor('ano')"&gt;Ano&lt;/a&gt;&lt;/th&gt;
+                    &lt;th&gt;&lt;a href="" ng-click="ordenarCarrosPor('modelo')"&gt;Modelo&lt;/a&gt;&lt;/th&gt;
+                    &lt;th&gt;Opções&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr ng-repeat="carro in listaCarros| filter: criterio  | orderBy:campoOrderBy:reverse"&gt;
+                    &lt;td class="hidden-xs"&gt;{{carro.ano}}&lt;/td&gt;
+                    &lt;td&gt;&lt;a href="" ng-click="showCarro(carro)"  data-toggle="modal"  data-target="#carroModal"&gt;{{carro.modelo}}&lt;/a&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;a href="" ng-click="excluirCarro(carro)" class="glyphicon glyphicon-remove"&gt;&lt;/a&gt;
+                        &lt;a href="" ng-click="editarCarro(carro)" class="glyphicon glyphicon glyphicon-pencil"&gt;&lt;/a&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tfoot&gt;
+                &lt;td colspan="2" class="hidden-xs"&gt;&lt;strong&gt;Total de Carros no sistema:&lt;/strong&gt;&lt;/td&gt;
+                &lt;td colspan="1" class="hidden-xs"&gt;{{listaCarros.length}}&lt;/td&gt;
+
+                &lt;td colspan="2" class="visible-xs"&gt;&lt;strong&gt;Total de Carros: {{listaCarros.length}}&lt;/strong&gt;&lt;/td&gt;
+
+                &lt;/tfoot&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/ng-urrgh&gt;
+</code>
+</pre>

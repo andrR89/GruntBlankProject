@@ -13,7 +13,16 @@ app.controller('carrosController', ['$scope', 'carrosAPI', '$location', '$anchor
         $scope.campoOrderBy = "ano";
         $scope.templateCadastroCarro = {name: 'cadastroCarro', url: 'carros/cadastroCarros.html'};
         $scope.templatePesquisaCarro = {name: 'pesquisaCarro', url: 'carros/pesquisaCarros.html'};
+        $scope.templateCode = {name: 'HTML - Pesquisa Carro', url: 'carros/code-pesquisa.html'};
         $scope.carroShow = {};
+
+        $scope.templatesCode = [
+            {name: 'Javascript - Carro Controller', url: 'carros/code-carro-controller.html'},
+            {name: 'HTML - Pesquisa Carro', url: 'carros/code-pesquisa.html'},
+            {name: 'HTML - Modal Carro', url: 'carros/code-modal.html'},
+            {name: 'HTML - Cadastro Carro', url: 'carros/code-cadastro.html'},
+        ];
+
 
         $scope.adicionarCarro = function(carro) {
             if ($scope.editIndex === -1) {
@@ -102,5 +111,14 @@ app.controller('carrosController', ['$scope', 'carrosAPI', '$location', '$anchor
             });
         };
 
+
+        $scope.alterarSource = function(templateCodePesquisa){
+            $scope.templateCode = angular.copy(templateCodePesquisa);
+             setTimeout(function(){
+                $('#urrgh').removeClass("prettyprinted");
+                prettyPrint();
+                console.log("Limpado!")
+            }, 500);
+        };
         $scope.iniciarListas();
     }]);

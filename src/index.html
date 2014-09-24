@@ -3,27 +3,20 @@
     <head>
         <meta charset='utf-8'>
         <title>Teste angular</title>
-        <script src="../lib/angular/angular.js"></script>
-        <script src="../lib/angular-i18n/angular-locale_pt-br.js"></script>
-        <script src="../lib/angular-route/angular-route.js"></script>
-        <script src="../lib/jquery/dist/jquery.min.js"></script>
-        <script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="app/app.js"></script>
-        <script src="shared/filters/filters.js"></script>
-        <script src="carros/route.js"></script>
-        <script src="carros/fabricanteService.js"></script>
-        <script src="carros/carrosService.js"></script>
-        <script src="carros/carroController.js"></script>
-        
-        <script src="shared/directives/directive.js"></script>
         <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap-theme.css">
-        <link rel="stylesheet" href="shared/stylesheet/estilos.css">
         <!-- Custom styles for this template -->
         <link href="shared/stylesheet/sticky-footer-navbar.css" rel="stylesheet">
-        <script>
 
-        </script>
+
+        <link rel="stylesheet" href="../lib/google-code-prettify/src/prettify.css">
+
+        <!--
+        <link href="../lib/rainbow/themes/blackboard.css" rel="stylesheet" type="text/css" media="screen">
+        <script src="../lib/rainbow/js/rainbow.js"></script>
+        <script src="../lib/rainbow/js/language/generic.js"></script>
+        <script src="../lib/rainbow/js/language/javascript.js"></script>
+        -->
     </head>
 
     <body>
@@ -35,5 +28,26 @@
         <div ng-include="templateFooter.url" ng-controller="templateController">
         </div>
     </body>
-
 </html>
+<script src="../lib/angular/angular.js"></script>
+<script src="../lib/angular-i18n/angular-locale_pt-br.js"></script>
+<script src="../lib/angular-route/angular-route.js"></script>
+<script src="../lib/jquery/dist/jquery.min.js"></script>
+<script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="app/app.js"></script>
+<script src="shared/filters/filters.js"></script>
+<script src="carros/route.js"></script>
+<script src="carros/fabricanteService.js"></script>
+<script src="carros/carrosService.js"></script>
+<script src="carros/carroController.js"></script>
+
+<script src="shared/directives/directive.js"></script>
+<script src="../lib/google-code-prettify/src/prettify.js"></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&amp;skin=default&amp;lang=css" defer="defer"></script>
+<script>
+    !function ($) {
+        $(function(){
+            window.prettyPrint && prettyPrint()
+        })
+    }(window.jQuery)
+</script>

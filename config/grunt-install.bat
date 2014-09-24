@@ -1,5 +1,6 @@
 echo "Criando instancia do grunt no projeto"
 call npm install grunt
+call npm install bower
 echo "Instalando tasks do grunt na pasta do projeto"
 call npm install grunt-contrib-clean --save-dev
 call npm install grunt-contrib-jshint --save-dev
