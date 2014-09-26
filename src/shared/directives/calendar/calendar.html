@@ -1,0 +1,11 @@
+<div>
+    <label ng-show="label">{{label}}</label>
+    <div class="input-group">
+        <input type="text" placeholder="{{placeholder}}" class="form-control" datepicker-popup="{{format}}" ng-model="model" is-open="opened" min-date="minDate" current-text="Hoje" clear-text="Limpar" close-text="Fechar" />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open($event)">
+                <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+        </span>
+    </div>
+</div>

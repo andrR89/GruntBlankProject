@@ -1,0 +1,48 @@
+{
+    "cols": [{
+            "id": "coluna_0",
+            "label": "Semana",
+            "type": "string"
+        }, {
+            "id": "coluna_1",
+            "label": "Previsto",
+            "type": "number"
+        }, {
+            "id": "coluna_2",
+            "label": "Realizado",
+            "type": "number"
+        }],
+    "rows": [{
+            "c": [{
+                    "v": "JUN/2014"
+                }, {
+                    "v": 1000
+                }, {
+                    "v": 400
+                }]
+        }, {
+            "c": [{
+                    "v": "JUL/2014"
+                }, {
+                    "v": 1170
+                }, {
+                    "v": 460
+                }]
+        }, {
+            "c": [{
+                    "v": "AGO/2014"
+                }, {
+                    "v": 1220
+                }, {
+                    "v": 1220
+                }]
+        }, {
+            "c": [{
+                    "v": "SET/2014"
+                }, {
+                    "v": 1030
+                }, {
+                    "v": 540
+                }]
+        }]
+}

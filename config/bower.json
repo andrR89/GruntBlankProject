@@ -8,8 +8,15 @@
         "angular": "1.2.x",
         "jquery": "1.11.1",
         "bootstrap": "3.2.0",
-        "jasmine": "2.0.4",
         "angular-i18n": "1.2.x",
-        "angular-route": "1.2.x"
+        "angular-route": "1.2.x",
+        "angular-mocks": "1.2.x",
+        "jasmine": "https://github.com/pivotal/jasmine/blob/master/dist/jasmine-standalone-2.0.3.zip?raw=true",
+        "google-code-prettify": "1.0.3",
+        "angular-bootstrap": "0.11.0",
+        "angular-ui-utils": "0.1.1",
+        "zeroclipboard": "2.1.6",
+        "angular-utils-pagination": "0.2.5",
+        "angular-google-chart": "0.0.11"
     }
 }

@@ -1,0 +1,147 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="navbar-text">Filtro</h3>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Exemplo</div>
+        <div class="panel-body">
+            <ng-filtro filtros="filtros" placeholder="Placeholder" funcao-pesquisar="pesquisar(filtros)" rota="rota" usuario="usuario@nexxera.com">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <input type="text" class="form-control"
+                               placeholder="Ano"
+                               ng-model="filtros.ano">
+                    </div>
+
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control"
+                               placeholder="Modelo"
+                               ng-model="filtros.modelo">
+                    </div>
+
+                    <div class="col-lg-5">
+                        <select class="form-control" name="item" ng-model="filtros.fabricante" ng-options="opcaoTipo.key as opcaoTipo.value for opcaoTipo in dataComboFornecedores | orderBy:'value'">
+                            <option value="">Selecione o fabricante</option>
+                        </select>
+                    </div>
+                </div>
+            </ng-filtro>                
+        </div>
+    </div>
+    <tabset>
+        <tab heading="Dependências">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>filtro.js</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </tab>
+        <tab heading="Documentação">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Parâmetro</th>
+                                <th class="hidden-xs">Descrição</th>
+                                <th>Obrigatório</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>filtros</td>
+                                <td class="hidden-xs">ng-model dos inputs</td>
+                                <td>Sim</td>
+                            </tr>
+                            <tr>
+                                <td>placeholder</td>
+                                <td class="hidden-xs">Placeholder do filtro básico</td>
+                                <td>Não</td>
+                            </tr>
+                            <tr>
+                                <td>rota</td>
+                                <td class="hidden-xs">Chave para busca dos filtros cadastrados</td>
+                                <td>Sim</td>
+                            </tr>
+                            <tr>
+                                <td>usuario</td>
+                                <td class="hidden-xs">Chave para busca dos filtros cadastrados</td>
+                                <td>Sim</td>
+                            </tr>
+                            <tr>
+                                <td>funcao-pesquisar</td>
+                                <td class="hidden-xs">Função de pesquisa no controller</td>
+                                <td>Sim</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </tab>
+        <tab heading="HTML">
+            <div class="panel-body">
+                <copyboard id="caralho" copiar-de="copyHtml"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyHtml">
+                    <code>
+&lt;ng-filtro filtros="filtros" placeholder="Placeholder" funcao-pesquisar="pesquisar(filtros)" rota="rota" usuario="usuario@nexxera.com"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-lg-2"&gt;
+            &lt;input type="text" class="form-control"
+                   placeholder="Ano"
+                   ng-model="filtros.ano"&gt;
+        &lt;/div&gt;
+
+        &lt;div class="col-lg-5"&gt;
+            &lt;input type="text" class="form-control"
+                   placeholder="Modelo"
+                   ng-model="filtros.modelo"&gt;
+        &lt;/div&gt;
+
+        &lt;div class="col-lg-5"&gt;
+            &lt;select class="form-control" name="item" ng-model="filtros.fabricante" ng-options="opcaoTipo.key as opcaoTipo.value for opcaoTipo in dataCombo.comboFornecedores | orderBy:'value'"&gt;
+                &lt;option value="">Selecione o fabricante&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/ng-filtro&gt;
+                    </code>
+                </pre>
+            </div>
+        </tab>
+        <tab heading="Javascript">
+            <div class="panel-body">
+                <copyboard id="poha" copiar-de="copyJavascript"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyJavascript">
+                <code>
+app.controller('filtroController', ['$scope', function ($scope) {
+    $scope.filtros = {};
+    $scope.dataComboFornecedores = [{"key": 'Chevrolet', "value": 'Chevrolet'}];
+
+    $scope.pesquisar = function(filtros) {
+           alert('Filtros: ' + JSON.stringify(filtros));
+    };
+}]);
+                </code>
+                </pre>
+            </div>
+        </tab>
+    </tabset>
+
+    <script>
+                loadPrettify();
+                loadTooltip();
+    </script>
+</div>

@@ -1,53 +1,72 @@
 <!DOCTYPE html>
-<html ng-app="lanchoneteApp">
+<html ng-app="blankApp">
     <head>
-        <meta charset='utf-8'>
-        <title>Teste angular</title>
-        <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap-theme.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta charset='UTF-8'>
+        <title>Sandbox AngularJs</title>
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="shared/stylesheet/estilos.css" />
+        <link rel="stylesheet" href="shared/stylesheet/copy.css" />
         <!-- Custom styles for this template -->
-        <link href="shared/stylesheet/sticky-footer-navbar.css" rel="stylesheet">
-
-
-        <link rel="stylesheet" href="../lib/google-code-prettify/src/prettify.css">
-
-        <!--
-        <link href="../lib/rainbow/themes/blackboard.css" rel="stylesheet" type="text/css" media="screen">
-        <script src="../lib/rainbow/js/rainbow.js"></script>
-        <script src="../lib/rainbow/js/language/generic.js"></script>
-        <script src="../lib/rainbow/js/language/javascript.js"></script>
-        -->
+        <link rel="stylesheet" href="shared/stylesheet/sticky-footer-navbar.css" />
+        <!-- SKINS Disponíveis -->
+        <link rel="stylesheet" href="lib/google-code-prettify/src/prettify.css" />
+        <!--<link rel="stylesheet" href="lib/google-code-prettify/styles/sunburst.css" />-->
+        <!--<link rel="stylesheet" href="lib/google-code-prettify/styles/sons-of-obsidian.css" />-->
+        <!--<link rel="stylesheet" href="lib/google-code-prettify/styles/doxy.css" />-->
+        <!--<link rel="stylesheet" href="lib/google-code-prettify/styles/desert.css" />-->
     </head>
 
     <body>
+        <div ng-include="templateHeader.url" ng-controller="templateController">
+        </div>
         <div class="container">
-            <div ng-include="templateHeader.url" ng-controller="templateController">
-            </div>
             <div ng-view></div>
         </div>
         <div ng-include="templateFooter.url" ng-controller="templateController">
         </div>
     </body>
-</html>
-<script src="../lib/angular/angular.js"></script>
-<script src="../lib/angular-i18n/angular-locale_pt-br.js"></script>
-<script src="../lib/angular-route/angular-route.js"></script>
-<script src="../lib/jquery/dist/jquery.min.js"></script>
-<script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
-<script src="app/app.js"></script>
-<script src="shared/filters/filters.js"></script>
-<script src="carros/route.js"></script>
-<script src="carros/fabricanteService.js"></script>
-<script src="carros/carrosService.js"></script>
-<script src="carros/carroController.js"></script>
 
-<script src="shared/directives/directive.js"></script>
-<script src="../lib/google-code-prettify/src/prettify.js"></script>
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&amp;skin=default&amp;lang=css" defer="defer"></script>
-<script>
-    !function ($) {
-        $(function(){
-            window.prettyPrint && prettyPrint()
-        })
-    }(window.jQuery)
-</script>
+    <!-- 
+        Alguns scripts não são necessários chamar na <head> da página.
+        É importante que esses scripts sejam identificados para 
+        colocarmos no fim da página para diminuir o tempo entre o load e renderização da página.
+    
+        Normalmente são scripts não necessários para o carregamento.
+    -->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/zeroclipboard/dist/ZeroClipboard.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-utils-pagination/dirPagination.js"></script>
+    <script src="lib/angular-i18n/angular-locale_pt-br.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/google-code-prettify/src/prettify.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="lib/angular-ui-utils/ui-utils.js"></script>
+    <script src="lib/angular-google-chart/ng-google-chart.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/route.js"></script>
+    <!-- Filters -->
+    <script src="shared/filters/filters.js"></script>
+    <!-- Services / Factories -->
+    <script src="carros/fabricanteService.js"></script>
+    <script src="carros/carrosService.js"></script> 
+    <!-- Diretivas -->
+    <script src="shared/directives/directive.js"></script>
+    <script src="shared/directives/filtro/filtro.js"></script>
+    <script src="shared/directives/calendar/calendar.js"></script>
+    <script src="shared/directives/copyboard/copyboard.js"></script>
+    <!-- Controllers -->
+    <script src="carros/carroController.js"></script>
+    <script src="componentes/filtro/filtroController.js"></script>
+    <script src="componentes/calendar/calendarController.js"></script>
+    <script src="componentes/masks/masksController.js"></script>
+    <script src="componentes/chart/chartController.js"></script>
+    <!-- Outros -->
+    <script src="shared/modules/scroolTo.js"></script>
+    <script src="shared/utils/refresh.js"></script>
+</html>

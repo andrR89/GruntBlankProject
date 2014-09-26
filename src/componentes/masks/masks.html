@@ -1,0 +1,54 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="navbar-text">Masks</h3>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Exemplo</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-4">
+                    <input ui-mask="(99) 9999-9999" ng-model="valor">
+                </div>
+                <div class="col-lg-4">
+                    Valor: {{valor}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <tabset>
+        <tab heading="Dependências">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ui-utils.min.js</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </tab>
+        <tab heading="HTML">
+            <div class="panel-body">
+<pre class="prettyprint linenums lang-scm">
+    <code>
+&lt;input ui-mask="(99) 9999-9999" ng-model="valor"/&gt;
+</code>
+</pre>
+            </div>
+        </tab>
+    </tabset>
+
+    <script>
+        loadPrettify();
+        loadTooltip();
+    </script>
+</div>

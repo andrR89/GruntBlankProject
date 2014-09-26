@@ -40,7 +40,7 @@
   "sourcesDir": "../src/",
   "garbageDir": "src/",
   "sharedDir": "shared/",
-  "libDir": "../lib/",
+  "libDir": "../src/lib/",
   "indexFile": "index_prod.html",
   "concatCssFile": "stylesheet.css",
   "concatJsFile": "scripts.js",

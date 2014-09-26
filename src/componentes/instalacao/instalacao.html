@@ -1,0 +1,143 @@
+<div>   
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="navbar-text">Instalação</h3>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Passos</div>
+        <div class="panel-body">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active">
+                    <a>
+                        <span class="badge pull-left">1</span>
+                        &nbsp; Clonar o Projeto
+                    </a>
+                </li>
+                <li>
+                    <br/>
+                    Abrir o CMD e executar o seguinte comando:
+                    <br/>
+                <copyboard id="copycode1" copiar-de="copyLocal1"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyLocal1">
+<code>git clone ssh://repos.nexxera.com/home/repos/git/teste/GruntBlankProject</code>
+                </pre>
+                </li>
+                <li class="active">
+                    <a>
+                        <span class="badge pull-left">2</span>
+                        &nbsp;Executar grunt-install.bat
+                    </a>
+                </li>
+                <li>
+                    <br/>
+                    Ainda no cmd Navegar ate a pasta "config" do projeto e executar o comando abaixo:
+                <copyboard id="copycode2" copiar-de="copyLocal2"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyLocal2">
+<code>cd $PROJECT_HOME/config
+grunt-install.bat</code>
+                </pre>
+                </li>
+                <li class="active">
+                    <a>
+                        <span class="badge pull-left">3</span>
+                        &nbsp;Rodar a distribuição
+                    </a>
+                </li>
+                <li>
+                    Ainda na pasta config, executar a task do grunt no cmd
+                <copyboard id="copycode4" copiar-de="copyLocal3"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyLocal3">
+<code>grunt execute-dist</code>
+                </pre>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <tabset>
+        <tab heading="Task's Grunt">
+            <div class="panel-body">
+                <copyboard id="copycode1" copiar-de="copyLocal4"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyLocal4">
+<code>grunt qa // Executa os testes no projeto e roda o JsHint
+grunt dist // Gera a distribuição do Projeto
+grunt execute-dist // Gera a distribuição do Projeto e Roda o mesmo num Servidor Web</code>
+                </pre>
+            </div> 
+        </tab>
+        <tab heading="Libs Incluídas">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Versão</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="http://jquery.com/" target="_blank">Jquery</a></td>
+                                <td>1.11.1</td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://getbootstrap.com/getting-started/" target="_blank">Bootstrap</a></td>
+                                <td>3.2.0</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://angularjs.org/" target="_blank">AngularJs</a></td>
+                                <td>1.2.x</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://docs.angularjs.org/guide/i18n" target="_blank">angular-i18n</a></td>
+                                <td>1.2.x</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://docs.angularjs.org/api/ngRoute/service/$route" target="_blank">angular-route</a></td>
+                                <td>1.2.x</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://docs.angularjs.org/api/ngMock/object/angular.mock" target="_blank">angular-mocks</a></td>
+                                <td>1.2.x</td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://jasmine.github.io/" target="_blank">jasmine</a></td>
+                                <td>2.0.3</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://code.google.com/p/google-code-prettify/" target="_blank">google-code-prettify</a></td>
+                                <td>1.0.3</td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://angular-ui.github.io/bootstrap/" target="_blank">angular-bootstrap</a></td>
+                                <td>0.11.0</td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://angular-ui.github.io/ui-utils/" target="_blank">angular-ui-utils</a></td>
+                                <td>0.1.1</td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://zeroclipboard.org/" target="_blank">zeroclipboard</a></td>
+                                <td>2.1.6</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination" target="_blank">angular-utils-pagination</a></td>
+                                <td>0.2.5</td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://chinmaymk.github.io/angular-charts/" target="_blank">angular-google-chart</a></td>
+                                <td>0.0.11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </tab>
+    </tabset>
+
+    <script>
+        loadPrettify();
+        loadTooltip();
+    </script>
+</div>

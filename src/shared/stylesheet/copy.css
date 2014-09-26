@@ -1,0 +1,54 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/09/2014, 14:11:20
+    Author     : andre.rogerio
+*/
+
+.zero-clipboard {
+    position: relative;
+    display: none;
+}
+
+.btn-clipboard {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    display: block;
+    padding: 5px 8px;
+    font-size: 12px;
+    color: #000;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #888888;
+    border-radius: 0 4px 0 4px;
+}
+
+.btn-clipboard:hover {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #888888;
+}
+
+.btn-clipboard.zeroclipboard-is-hover {    
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #888888;
+}
+
+.btn-clipboard.zeroclipboard-is-active {    
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #888888;
+}
+
+@media (min-width: 768px)
+{
+    .zero-clipboard {
+        display: block;
+    }
+}

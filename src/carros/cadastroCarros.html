@@ -34,34 +34,6 @@
                     class="btn btn-info" ng-disabled="carroForm.$invalid"> Adicionar
             </button>
         </form>
-        <a href="" class="visible-xs" ng-click="gotoTopo()"> Voltar ao top </a>
-    </div>
-</div>
-
-<div class="panel panel-default" >
-    <div class="panel-heading" id="sources">
-        Sources
-    </div>
-    <div class="panel-body">
-        <div class="list-group">
-            <a ng-repeat="templateCode in templatesCode" href="" class="list-group-item" ng-click="alterarSource(templateCode)" data-toggle="modal"  data-target="#codeModal">{{templateCode.name}}</a>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade" id="codeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button"  class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                <h4 class="modal-title" id="myModalLabel">Source</h4>
-            </div>
-            <div class="modal-body" style="overflow: auto;">
-                <div ng-include="templateCode.url"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+        <a class="visible-xs" scroll-to="topo"> Voltar ao top </a>
     </div>
 </div>

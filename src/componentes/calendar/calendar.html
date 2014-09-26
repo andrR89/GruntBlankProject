@@ -1,0 +1,117 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="navbar-text">Calendar</h3>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Exemplo</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <calendar label="Data" model="dataSelecionada" placeholder="Data" format="dd/MM/yyyy"></calendar>
+                </div>
+                <div class="col-lg-6">
+                    Data selecionada: {{dataSelecionada}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <tabset>
+        <tab heading="Dependências">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ui-bootstrap.min.js</td>
+                            </tr>
+                            <tr>
+                                <td>ui-bootstrap-tpls.min.js</td>
+                            </tr>
+                            <tr>
+                                <td>calendar.js</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </tab>
+        <tab heading="Documentação">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Parâmetro</th>
+                                <th class="hidden-xs">Descrição</th>
+                                <th>Obrigatório</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>label</td>
+                                <td class="hidden-xs">Label para o input</td>
+                                <td>Não</td>
+                            </tr>
+                            <tr>
+                                <td>model</td>
+                                <td class="hidden-xs">Define o model para o input</td>
+                                <td>Sim</td>
+                            </tr>
+                            <tr>
+                                <td>placeholder</td>
+                                <td class="hidden-xs">Placeholder para o input</td>
+                                <td>Não</td>
+                            </tr>
+                            <tr>
+                                <td>format</td>
+                                <td class="hidden-xs">Formato da data</td>
+                                <td>Sim</td>
+                            </tr>
+                            <tr>
+                                <td>min</td>
+                                <td class="hidden-xs">
+                                    Define a data mínima a ser selecionada
+                                </td>
+                                <td>Não</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </tab>
+        <tab heading="HTML">
+            <div class="panel-body">
+                <copyboard id="copycode" copiar-de="copyHtml"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyHtml">
+    <code>
+&lt;calendar label="Data" model="dataSelecionada" placeholder="Data" format="dd/MM/yyyy"&gt;&lt;/calendar&gt;
+</code>
+                </pre>
+            </div>
+        </tab>
+        <tab heading="Javascript">
+            <div class="panel-body">
+                <copyboard id="copycode1" copiar-de="copyJavascrip"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyJavascrip">
+                <code>
+app.controller('calendarController', ['$scope', function ($scope) {
+    $scope.dataSelecionada = new Date();
+}]);
+                </code>
+                </pre>
+            </div>
+        </tab>
+    </tabset>
+</div>
+<script>
+    loadPrettify();
+    loadTooltip();
+</script>

@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         },
         concat: {
             js: {
-                src: ['<%= pkg.sourcesDir %>*/*.js', '<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.js', '!<%= pkg.sourcesDir %>*.js', '!<%= pkg.libDir %>*.js', '!<%= pkg.sourcesDir %><%= pkg.distDir %>*'],
+                src: ['<%= pkg.sourcesDir %>*/*.js', '<%= pkg.sourcesDir %>*/*/*.js', '<%= pkg.sourcesDir %><%= pkg.sharedDir %>**/*.js', '!<%= pkg.sourcesDir %>*.js', '!<%= pkg.libDir %>*.js', '!<%= pkg.sourcesDir %><%= pkg.distDir %>*', '!<%= pkg.sourcesDir %>lib/*/*'],
                 dest: '<%= pkg.garbageDir %><%= pkg.concatJsFile %>'
             },
             css: {
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        src: ['<%= pkg.sourcesDir %>*/*.html'],
+                        src: ['<%= pkg.sourcesDir %>*/*.html','<%= pkg.sourcesDir %>*/*/*.html', '<%= pkg.sourcesDir %>shared/*/*/*.html'],
                         dest: '<%= pkg.garbageDir %>'
                     },
                     {
@@ -86,14 +86,14 @@ module.exports = function (grunt) {
                 files: [
                     // outros ressources
                     {
-                        src: ['<%= pkg.sourcesDir %>*/*', '<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*', '!<%= pkg.sourcesDir %>*/*.html', '!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.html', '!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.css', '!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.js', '!<%= pkg.sourcesDir %>*/*.js', '!<%= pkg.sourcesDir %><%= pkg.distDir %>*', '!<%= pkg.sourcesDir %>node_modules/*', '!<%= pkg.sourcesDir %>app/*', '!<%= pkg.libDir %>*'],
+                        src: [ '<%= pkg.sourcesDir %>*/*', '<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*', '!<%= pkg.sourcesDir %>*/*.html', '!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.html', '!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.css', '!<%= pkg.sourcesDir %><%= pkg.sharedDir %>*/*.js', '!<%= pkg.sourcesDir %>*/*.js', '!<%= pkg.sourcesDir %><%= pkg.distDir %>*', '!<%= pkg.sourcesDir %>node_modules/*', '!<%= pkg.sourcesDir %>app/*', '!<%= pkg.libDir %>*'],
                         dest: '<%= pkg.garbageDir %>'
                     },
                     // libs
                     {
                         expand: true,
                         flatten: true,
-                        src: ['<%= pkg.libDir %>*/*.min.js*', '<%= pkg.libDir %>*.min.js*', '<%= pkg.libDir %>**/*.min.*', '!<%= pkg.libDir %>**/*.min*.gzip', '<%= pkg.libDir %><%= pkg.angularI18NFolder %>*<%= pkg.angularLocale %>*'],
+                        src: ['<%= pkg.libDir %>zeroclipboard/dist/*.swf', '<%= pkg.libDir %>angular-google-chart/*.js', '<%= pkg.libDir %>angular-utils-pagination/*.js','<%= pkg.libDir %>google-code-prettify/src/*.min.*', '<%= pkg.libDir %>*/*.min.js*', '<%= pkg.libDir %>*.min.js*', '<%= pkg.libDir %>**/*.min.*', '!<%= pkg.libDir %>**/*.min*.gzip', '<%= pkg.libDir %><%= pkg.angularI18NFolder %>*<%= pkg.angularLocale %>*'],
                         dest: '<%= pkg.garbageDir %>/lib'
                     },
                     // libs
@@ -103,6 +103,7 @@ module.exports = function (grunt) {
                         src: ['<%= pkg.libDir %>**/*.ttf', '<%= pkg.libDir %>**/*.woff'],
                         dest: '<%= pkg.garbageDir %>/fonts'
                     },
+                    
                     // Copia todo o build para o diretorio /dist
                     {
                         expand: true, cwd: '<%= pkg.garbageDir %>', src: ['**'], dest: '<%= pkg.distDir %>'

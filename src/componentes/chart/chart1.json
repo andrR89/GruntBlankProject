@@ -1,0 +1,36 @@
+{
+  "cols": [
+    {
+      "id": "coluna_0",
+      "label": "Comunidade",
+      "type": "string"
+    },
+    {
+      "id": "coluna_1",
+      "label": "Quantidade",
+      "type": "number"
+    }
+  ],
+  "rows": [
+    {
+      "c": [
+        {
+          "v": "Previsto"
+        },
+        {
+          "v": 1539.00
+        }
+      ]
+    },
+    {
+      "c": [
+        {
+          "v": "Realizado"
+        },
+        {
+          "v": 850.00
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+<div>   
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="navbar-text">Dialog</h3>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Exemplo</div>
+        <div class="panel-body">
+            <button data-toggle="modal"  data-target="#carroModal" class="btn btn-info" > Adicionar
+            </button>        
+        </div>
+    </div>
+
+    <tabset>
+        <tab heading="Html">
+            <div class="panel-body">
+                <copyboard id="copycode1" copiar-de="copyLocalHtml"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyLocalHtml">
+                    <code>
+&lt;button data-toggle="modal"  data-target="#carroModal" class="btn btn-info" &gt; Adicionar &lt;/button&gt;
+                    </code>
+                </pre>
+            </div> 
+        </tab>
+        <tab heading="Html - Modal">
+            <div class="panel-body">
+                <copyboard id="copycode2" copiar-de="copyLocalModal"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyLocalModal">
+                    <code>
+&lt;div class="modal fade" id="carroModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;X&lt;/button&gt;
+                &lt;h4 class="modal-title" id="myModalLabel"&gt;<span>{{</span>carroShow.modelo}}   &lt;/h4&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                &lt;image src="<span>{{</span>carroShow.imageURL}}" alt="Imagem Não encontrada!" class="hidden-xs"/&gt;
+
+                &lt;div class="visible-xs"&gt;
+                    &lt;a href="<span>{{</span>carroShow.imageURL}}"&gt;
+                        &lt;image src="shared/images/mamute.png" alt="Imagem Não encontrada!" /&gt;
+                    &lt;/a&gt;
+                    &lt;br/&gt;
+                    Clique no Mamute para ver a Foto!
+                &lt;/div&gt;
+
+                &lt;h3&gt; <span>{{</span>carroShow.ano}}&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+                &lt;table class="table"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="tdDescriptionModal"&gt;Fabricante: &lt;/td&gt;
+                        &lt;td class="tdValueModal"&gt;<span>{{</span>carroShow.fabricante.nome}}&lt;/td&gt;
+                        &lt;td class="tdDescriptionModal"&gt;País: &lt;/td&gt;
+                        &lt;td class="tdValueModal"&gt;<span>{{</span>carroShow.fabricante.pais}}&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+                </code>
+                                                </pre>
+            </div>
+
+            </tab>
+            </tabset>
+
+            <div class="modal fade" id="carroModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                            <h4 class="modal-title" id="myModalLabel">{{carroShow.modelo}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <image src="{{carroShow.imageURL}}" alt="Imagem Não encontrada!" class="hidden-xs"/>
+
+                            <div class="visible-xs">
+                                <a href="{{carroShow.imageURL}}">
+                                    <image src="shared/images/mamute.png" alt="Imagem Não encontrada!" />
+                                </a>
+                                <br/>
+                                Clique no Mamute para ver a Foto!
+                            </div>
+
+                            <h3> {{carroShow.ano}}</h3>
+                        </div>
+                        <div class="modal-footer">
+                            <table class="table">
+                                <tr>
+                                    <td class="tdDescriptionModal">Fabricante: </td>
+                                    <td class="tdValueModal">{{carroShow.fabricante.nome}}</td>
+                                    <td class="tdDescriptionModal">País: </td>
+                                    <td class="tdValueModal">{{carroShow.fabricante.pais}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                loadPrettify();
+                loadTooltip();
+            </script>
+</div>

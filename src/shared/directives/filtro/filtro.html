@@ -1,0 +1,107 @@
+<div>
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="input-group corpoCamposFiltro">
+                <input type="text" class="form-control"
+                       placeholder="{{placeholder}}" ng-model="filtro.parametro">
+                <span class="input-group-btn">
+                    <button ng-click="pesquisar(filtro)" class="btn btn-default"
+                            type="button">Buscar</button>
+                </span>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="corpoCamposFiltro">
+                <button type="button" class="btn btn-default"
+                        ng-click="buscasAvancada()">
+                    <span class="glyphicon glyphicon-cog"></span> Busca avan&ccedil;ada
+                </button>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="input-group corpoCamposFiltro">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button"
+                            id="dropdownMenu1" data-toggle="dropdown">
+                        Par&acirc;metros de busca <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu"
+                        aria-labelledby="dropdownMenu1">
+                        <li ng-repeat="param in parametrosFiltro"><a style="cursor:pointer" ng-click="setParametros(param.ttParametros)">{{param.dsNome}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="showBuscaAvancada"
+         style="padding: 8px; border-top: 3px; border-bottom: 1px; border-left: 1px; border-right: 1px; border-color: #8BC53E; border-style: solid;">
+
+        <div ng-transclude></div>
+        <br/>
+        <div class="linhaDivTop">
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="navbar-left">
+                        <button type="button" class="btn btn-default"
+                                ng-click="limparFiltros()">
+                            <span class="glyphicon glyphicon-ban-circle"></span> Limpar
+                            filtros
+                        </button>
+                    </div>
+
+                    <div class="navbar-right">
+                        <button type="button" class="btn btn-default"
+                                ng-click="pesquisar(filtros)">
+                            <span class="glyphicon glyphicon-search"></span> Buscar
+                        </button>
+                    </div>
+
+                    <div class="navbar-right" style="margin-right: 4px">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#filtroModal">
+                            <span class="glyphicon glyphicon-floppy-disk"></span> Salvar
+                            par&acirc;metros
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="filtroModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="salvaParametroForm">
+                    <div class="modal-header">
+                        <button type="button" ng-click="cleanShow();" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                        <h4 class="modal-title" id="myModalLabel">{{carroShow.modelo}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h3>Salvar par&acirc;metro</h3>
+                        <br />
+                        <div>
+                            <input type="text" class="form-control"
+                                   placeholder="Descri&ccedil;&atilde;o" ng-model="descricao" ng-required="true">
+                        </div>
+                        <br />
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container-fluid">
+                            <div class="navbar-right">
+                                <button type="button" class="btn btn-default" ng-disabled="salvaParametroForm.$invalid" ng-click="salvarParametros(descricao)">
+                                    <span class="glyphicon glyphicon-floppy-disk"></span> Salvar
+                                </button>
+                            </div>
+                            <div class="navbar-right" style="margin-right: 4px">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">
+                                    <span class="glyphicon glyphicon-ban-circle"></span> Cancelar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,22 +15,22 @@
                     <th><a href="" ng-click="ordenarCarrosPor('modelo')">Modelo</a></th>
                     <th>Opções</th>
                 </tr>
-                <tr ng-repeat="carro in listaCarros| filter: criterio  | orderBy:campoOrderBy:reverse">
+                <tr dir-paginate="carro in listaCarros| filter: criterio | orderBy:campoOrderBy:reverse | itemsPerPage: pageSize" current-page="currentPage">
                     <td class="hidden-xs">{{carro.ano}}</td>
                     <td><a href="" ng-click="showCarro(carro)"  data-toggle="modal"  data-target="#carroModal">{{carro.modelo}}</a></td>
                     <td><a href="" ng-click="excluirCarro(carro)" class="glyphicon glyphicon-remove"></a>
-                        <a href="" ng-click="editarCarro(carro)" class="glyphicon glyphicon glyphicon-pencil"></a>
+                        <a  scroll-to="cadastro" ng-click="editarCarro(carro);" class="glyphicon glyphicon glyphicon-pencil"></a>
                     </td>
                 </tr>
                 <tfoot>
                 <td colspan="2" class="hidden-xs"><strong>Total de Carros no sistema:</strong></td>
                 <td colspan="1" class="hidden-xs">{{listaCarros.length}}</td>
-
                 <td colspan="2" class="visible-xs"><strong>Total de Carros: {{listaCarros.length}}</strong></td>
-
                 </tfoot>
             </table>
         </div>
+        <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="shared/utils/dirPagination.tpl.html"></dir-pagination-controls>
+
     </div>
 </div>
 
@@ -66,4 +66,3 @@
             </div>
         </div>
     </div>
-</div>
