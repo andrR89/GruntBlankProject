@@ -1,5 +1,3 @@
 {
-    "directory": "../src/lib",
-    "proxy":"http://andre.rogerio:Urrgh!02@proxy.nexxera.com:3128",
-    "https-proxy":"http://andre.rogerio:Urrgh!02@proxy.nexxera.com:3128"
+    "directory": "../src/lib"
 }
