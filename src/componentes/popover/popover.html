@@ -1,9 +1,25 @@
 <!-- Link que receberá o evento do popover ao ser clicado.-->
-<a href="" id="a-popover" class="btn btn-success" onclick="$('#a-popover').popover('show');">Abrir popover</a>
-<!-- Div oculta que será exibida dentro do popover. -->
-<script type="text/ng-template" id="templateId.html">
-    {{dynamicPopoverTitle}}
+<a href="" id="Advanced" advanced-popover body-template="templateBody.html" 
+   header-template="templateHeader.html" id-pop-over="Urrgh" ng-click="abrir()" 
+   data-placement="right" class="btn btn-success">Advanced PopOver</a>
+   
+<a href="" id="Simple" advanced-popover id-pop-over="Arrgh" 
+   title="Arrgh!" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+   ng-click="abrir()" data-placement="right" 
+   class="btn btn-info">Simple PopOver</a>
 
+<!-- Cabeçalho do PopOver Advanced -->
+<script type="text/ng-template" id="templateHeader.html">
+    <div align="left" style="float:left">
+        {{dynamicPopoverTitle}}
+    </div>
+    <div align="right">
+        <button id="btn-fechar" class="btn btn-danger" ng-click="fechar()">X</button>
+    </div>
+</script>
+
+<!-- Corpo do PopOver Advanced -->
+<script type="text/ng-template" id="templateBody.html">
     <ul>
         <li>{{dynamicPopoverTitle}}</li>
         <li>{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}</li>
@@ -11,16 +27,8 @@
         <li>{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}</li>
     </ul>
     <hr/>
-    <!-- Botão dentro do popover responsável por fechar o popover. -->
     <div align="right">
-        <button id="btn-fechar" class="btn btn-danger" onclick="fechar()">Fechar</button>
+        <button id="btn-fechar" class="btn btn-info" ng-click="fechar()">Go!</button>
     </div>
+</script>
 
-</script>
-<script type="text/ng-template" id="templateUrrgh.html">
-    <!-- Botão dentro do popover responsável por fechar o popover. -->
-    <div style="float: left">        {{dynamicPopover}}</div>
-    <div align="right">
-        <button id="btn-fechar" class="btn btn-danger" onclick="fechar()">Fechar</button>
-    </div>
-</script>

@@ -9,25 +9,60 @@
  *
  *
  */
-app.controller('popoverController', function ($scope, $compile,$templateCache) {
+app.controller('popoverController', function ($scope, $compile, $templateCache) {
     $scope.dynamicPopover = 'Hello, World!';
     $scope.dynamicPopoverTitle = 'Urrgh!';
-
-    template = $templateCache.get("templateId.html");
-
-    popOverContent = $compile("<div id='a-popover'>" + template+"</div>")($scope);
-
-    outroTemplate = $compile("<div id='a-popover'>" + $templateCache.get("templateUrrgh.html")+"</div>")($scope);
-
-
-    $('#a-popover').popover({
-        trigger: 'manual',
-        html: true,
-        title: outroTemplate,
-        content: popOverContent // Adiciona o conteúdo da div oculta para dentro do popover.
-    });
-
-    fechar = function() {
-        $('#a-popover').popover('hide');
+    
+    $scope.abrirX = function(){
+        
     }
 });
+
+
+app.directive('advancedPopover', function ($compile, $templateCache) {
+    var id = {};
+    return {
+        restrict: "A",
+        link: function (scope, element, attrs) {
+            
+            var id = attrs.idPopOver;
+            console.log(id);
+            var title = attrs.title;
+            var dataContent= attrs.dataContent;
+            var headerTemplate = attrs.headerTemplate;
+            var bodyTemplate = attrs.bodyTemplate;
+            
+            if(headerTemplate){
+                title = $compile("<div id='" + id + "'>" + $templateCache.get(headerTemplate) + "</div>")(scope);
+            }
+            
+            if(bodyTemplate){
+                dataContent = $compile("<div id='" + id + "'>" + $templateCache.get(bodyTemplate) + "</div>")(scope);
+            } 
+            
+            var options = {
+                placement: "auto",
+                html: true,
+                trigger: 'manual',
+                content: dataContent,
+                title: title
+            };
+
+            scope.fechar = function () {
+                $(element).popover('destroy');
+            };
+
+            scope.abrir = function () {
+                var popOver = document.getElementById(id);
+                
+                if (popOver === null) {
+                    $(element).popover(options);
+                    $(element).popover('show');
+                } else {
+                    scope.fechar();
+                }
+            };
+        }
+    };
+});
+

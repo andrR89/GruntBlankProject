@@ -17,6 +17,7 @@
         "angular-ui-utils": "0.1.1",
         "zeroclipboard": "2.1.6",
         "angular-utils-pagination": "0.2.5",
-        "angular-google-chart": "0.0.11"
+        "angular-google-chart": "0.0.11",
+        "nexxera-bootstrap-theme" : "https://flnws006dev.nexxera.com/componentes/pacotes/nexxera-bootstrap-theme.zip"
     }
 }
