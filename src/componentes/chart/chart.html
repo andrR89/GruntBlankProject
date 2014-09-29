@@ -1,32 +1,174 @@
 <div>
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">Previsto x Realizado</div>
-                <div class="panel-body">
-                    <div google-chart chart="chart">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="navbar-text">Chart</h3>
+        </div>
+    </div>
+</div>
+<div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Exemplo</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div google-chart chart="chart">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">Previsto x Realizado</div>
-                <div class="panel-body">
-                    <div google-chart chart="chart2">
+                <div class="col-lg-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div google-chart chart="chart2">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Previsto x Realizado</div>
-                <div class="panel-body">
-                    <div google-chart chart="chart3">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div google-chart chart="chart3">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
+
+    <tabset>
+        <tab heading="Dependências">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+                        <tr>
+                            <th>Nome</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>ng-google-chart.js</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </tab>
+        <tab heading="HTML">
+            <div class="panel-body">
+                <copyboard id="copycode" copiar-de="copyHtml"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyHtml"><code>&lt;div class="panel panel-default"&gt;
+    &lt;div class="panel-heading"&gt;Exemplo&lt;/div&gt;
+    &lt;div class="panel-body"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-lg-4"&gt;
+                &lt;div class="panel panel-default"&gt;
+                    &lt;div class="panel-body"&gt;
+                        &lt;div google-chart chart="chart"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-lg-8"&gt;
+                &lt;div class="panel panel-default"&gt;
+                    &lt;div class="panel-body"&gt;
+                        &lt;div google-chart chart="chart2"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-lg-12"&gt;
+                &lt;div class="panel panel-default"&gt;
+                    &lt;div class="panel-body"&gt;
+                        &lt;div google-chart chart="chart3"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </tab>
+        <tab heading="Javascript">
+            <div class="panel-body">
+                <copyboard id="copycode1" copiar-de="copyJavascrip"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyJavascrip"><code>app.controller('chartController', ['$scope', 'carrosAPI', '$http', '$filter', function ($scope, carrosAPI, $http, $filter) {
+
+    $http.get("componentes/chart/chart1.json").success(function (data) {
+        var dadosJson = data;
+        var chart = {};
+        chart.type = "PieChart";
+        chart.data = dadosJson;
+        chart.options = {
+            displayExactValues: true,
+            height: 200,
+            is3D: true
+        };
+
+        chart.formatters = {
+            number: [{
+                    columnNum: 1,
+                    pattern: "###000"
+                }]
+        };
+
+        $scope.chart = chart;
+    });
+
+    $http.get("componentes/chart/chart2.json").success(function (data) {
+        var dadosJson = data;
+        var chart = {};
+        chart.type = "ColumnChart";
+        chart.data = dadosJson;
+        chart.options = {
+            displayExactValues: true,
+            height: 200,
+            is3D: true,
+            chartArea: {left: 40, top: 5, bottom: 0, height: "90%"}
+        };
+
+        chart.formatters = {
+            number: [{
+                    columnNum: 1,
+                    pattern: "###000"
+                }]
+        };
+
+        $scope.chart2 = chart;
+    });
+
+    $http.get("componentes/chart/chart3.json").success(function (data) {
+        var dadosJson = data;
+        var chart = {};
+        chart.type = "LineChart";
+        chart.data = dadosJson;
+        chart.options = {
+            displayExactValues: true,
+            height: 200,
+            is3D: true,
+            pointSize: 5
+        };
+
+        chart.formatters = {
+            number: [{
+                    columnNum: 1,
+                    pattern: "###000"
+                }]
+        };
+
+        $scope.chart3 = chart;
+    });
+}]);</code></pre>
+            </div>
+        </tab>
+    </tabset>
+    <script>
+        loadPrettify();
+        loadTooltip();
+    </script>

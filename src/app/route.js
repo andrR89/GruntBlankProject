@@ -7,5 +7,6 @@ app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when("/dialog", {templateUrl:"componentes/dialog/dialog.html", controller:"carrosController"});
     $routeProvider.when("/calendar", {templateUrl:"componentes/calendar/calendar.html", controller:"calendarController"});
     $routeProvider.when("/masks", {templateUrl:"componentes/masks/masks.html", controller:"masksController"});
+    $routeProvider.when("/popover", {templateUrl:"componentes/popover/popover.html", controller:"popoverController"});
     $routeProvider.otherwise({redirectTo: "/home"});
 }]);

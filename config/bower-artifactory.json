@@ -1,0 +1,22 @@
+{
+    "name": "Grunt Project Blank",
+    "description": "A starter project for AngularJS using Grunt to build.",
+    "version": "1.0.0",
+    "homepage": "github.com/andrR89/GruntBlankProject",
+    "private": true,
+    "dependencies": {
+        "angular": "http://localhost:8081/artifactory/ext-release-local/angular/angular/1.2.x/angular.zip",
+        "jquery": "http://localhost:8081/artifactory/ext-release-local/jquery/jquery/1.11.1/jquery.zip",
+        "bootstrap": "http://localhost:8081/artifactory/ext-release-local/twitter/bootstrap/3.2.0/bootstrap.zip",
+        "angular-i18n": "http://localhost:8081/artifactory/ext-release-local/angular/i18n/1.2.x/angular-i18n.zip",
+        "angular-route": "http://localhost:8081/artifactory/ext-release-local/angular/route/1.2.x/angular-route.zip",
+        "angular-mocks": "http://localhost:8081/artifactory/ext-release-local/angular/mocks/1.2.x/angular-mocks.zip",
+        "jasmine": "http://localhost:8081/artifactory/ext-release-local/jasmine/jasmine/2.0.3/jasmine.zip",
+        "google-code-prettify": "http://localhost:8081/artifactory/ext-release-local/google-code/google-code-prettify/1.0.3/google-code-prettify.zip",
+        "angular-bootstrap": "http://localhost:8081/artifactory/ext-release-local/angular/bootstrap/0.11.0/angular-bootstrap.zip",
+        "angular-ui-utils": "http://localhost:8081/artifactory/ext-release-local/angular/utils/0.1.11/angular-ui-utils.zip",
+        "zeroclipboard": "http://localhost:8081/artifactory/ext-release-local/zeroclipboard/zeroclipboard/2.1.6/zeroclipboard.zip",
+        "angular-utils-pagination": "http://localhost:8081/artifactory/ext-release-local/angular/pagination/0.2.5/angular-utils-pagination.zip",
+        "angular-google-chart": "http://localhost:8081/artifactory/ext-release-local/angular/google-chart/0.0.11/angular-google-chart.zip"
+    }
+}
