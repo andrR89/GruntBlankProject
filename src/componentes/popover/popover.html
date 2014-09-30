@@ -1,20 +1,135 @@
-<!-- Link que receberá o evento do popover ao ser clicado.-->
-<a href="" id="Advanced" advanced-popover body-template="templateBody.html" 
-   header-template="templateHeader.html" id-pop-over="Urrgh" ng-click="abrir()" 
-   data-placement="right" class="btn btn-success">Advanced PopOver</a>
-   
-<a href="" id="Simple" advanced-popover id-pop-over="Arrgh" 
-   title="Arrgh!" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-   ng-click="abrir()" data-placement="right" 
-   class="btn btn-info">Simple PopOver</a>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">PopOver Simples (Click)</div>
+            <div class="panel-body">
+                <a href="" id="Simple" advanced-popover id-pop-over="Arrgh"
+                   title="Arrgh!" content="Urrgh, urrgh but the Arrgh!"
+                   ng-click="abrirPopOver()"
+                   class="btn btn-danger">Mostrar Arrgh</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">PopOver Simples (Tipo ToolTip)</div>
+            <div class="panel-body">
+                <a href="" id="Tooltip" advanced-popover id-pop-over="Orrgh"
+                   title="Orrgh!" content="Urrgh, arrgh but the Orrgh!"
+                   posicao="left" ng-mouseover="abrirPopOver()" ng-mouseleave="fecharPopOver()"
+                   class="btn btn-info">Mostrar Orrgh</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">PopOver Cabeçalho e Corpo Customizavel</div>
+            <div class="panel-body">
+                <a href="" id="Advanced" advanced-popover body-template="templateBody.html"
+                   header-template="templateHeader.html" id-pop-over="Urrgh" ng-click="abrirPopOver()"
+                   class="btn btn-success">Mostrar Urrgh</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">PopOver só Corpo Customizavel</div>
+            <div class="panel-body">
+                <a href="" id="bodyCuston" advanced-popover id-pop-over="CorpoCustomizavel"
+                   title="Orrgh!" body-template="templateBody.html"
+                   ng-click="abrirPopOver()"
+                   class="btn btn-warning">Mostrar Orrgh</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">PopOver só Cabeçalho Customizavel</div>
+            <div class="panel-body">
+                <a href="" id="headerCuston" advanced-popover content="Urrgh, urrgh but the Arrgh!"
+                   header-template="templateHeader.html" id-pop-over="CabecalhoCustomizavel" ng-click="abrirPopOver()"
+                   class="btn btn-primary">Mostrar Urrgh</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">PopOver Direções</div>
+            <div class="panel-body">
+                <a href="" id="left" advanced-popover id-pop-over="leftPopover" posicao="left"
+                   title="Left!" content="The Left Urrgh!"
+                   ng-click="abrirPopOver()" class="btn btn-default">&lt;</a>
+                <a href="" id="top" advanced-popover id-pop-over="topPopover" posicao="top"
+                   title="Top!" content="The Top Urrgh!"
+                   ng-click="abrirPopOver()" class="btn btn-default">^</a>
+                <a href="" id="Bottom" advanced-popover id-pop-over="BottomPopover" posicao="bottom"
+                   title="Bottom!" content="The Bottom Urrgh!"
+                   ng-click="abrirPopOver()" class="btn btn-default"> V </a>
+                <a href="" id="right" advanced-popover id-pop-over="rightPopover" posicao="right"
+                   title="Right!" content="The Right Urrgh!"
+                   ng-click="abrirPopOver()" class="btn btn-default"> > </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">PopOver num Input (Focus)</div>
+            <div class="panel-body">
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" class="form-control" advanced-popover id="inputMoeda" id-pop-over="inputMessage"
+                           title="Orrgh!" content="Urrgh, Urrgh but the Urrgh!"
+                           ng-focus="abrirPopOver()" trigger="focus">
+                    <span class="input-group-addon">.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">PopOver Advanced num input</div>
+            <div class="panel-body">
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" class="form-control" advanced-popover id="inputMoedaAdv"
+                           id-pop-over="inputMessageAdv"
+                           header-template="templateHeader.html" body-template="templateBody.html"
+                           ng-focus="abrirPopOver()" trigger="focus">
+                    <span class="input-group-addon">.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">PopOver num input (Hover)</div>
+            <div class="panel-body">
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" class="form-control" advanced-popover id="inputMoedaAdvHover"
+                           id-pop-over="inputMessageAdvHover"
+                           title="Orrgh!" content="Urrgh, Urrgh but the Urrgh!" posicao="bottom"
+                           ng-mouseover="abrirPopOver()" ng-mouseleave="fecharPopOver()" trigger="hover">
+                    <span class="input-group-addon">.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Cabeçalho do PopOver Advanced -->
 <script type="text/ng-template" id="templateHeader.html">
     <div align="left" style="float:left">
-        {{dynamicPopoverTitle}}
+        {{dynamicPopover}}
     </div>
     <div align="right">
-        <button id="btn-fechar" class="btn btn-danger" ng-click="fechar()">X</button>
+        <button id="btn-fechar" class="btn btn-danger" ng-click="fecharPopOver()">X</button>
     </div>
 </script>
 
@@ -22,13 +137,238 @@
 <script type="text/ng-template" id="templateBody.html">
     <ul>
         <li>{{dynamicPopoverTitle}}</li>
-        <li>{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}</li>
-        <li>{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}</li>
-        <li>{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}{{dynamicPopoverTitle}}</li>
+        <li>The {{dynamicPopoverTitle}}</li>
+        <li>{{dynamicPopoverTitle}} Great?</li>
+        <li>
+            A crazy violent zombie, says {{dynamicPopoverTitle}}
+        </li>
     </ul>
     <hr/>
     <div align="right">
-        <button id="btn-fechar" class="btn btn-info" ng-click="fechar()">Go!</button>
+        <button id="btn-fechar" class="btn btn-info" ng-click="fecharPopOver()">Go!</button>
     </div>
+</script>
+
+<tabset>
+    <tab heading="Documentação">
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Parâmetro</th>
+                        <th>Descrição</th>
+                        <th>Obrigatório</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>id-pop-over</td>
+                        <td>Identifacador do componente que chama o popOver</td>
+                        <td>Sim</td>
+                    </tr>
+                    <tr>
+                        <td>content</td>
+                        <td>Conteudo do popOver Simples</td>
+                        <td>Não (Se utilizar 'body-template')</td>
+                    </tr>
+                    <tr>
+                        <td>header-template</td>
+                        <td>Header do template</td>
+                        <td>Não (Se utilizar 'title')</td>
+                    </tr>
+                    <tr>
+                        <td>body-template</td>
+                        <td>Corpo do popOver Advanced</td>
+                        <td>Não (Se utilizar 'content')</td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>Titulo do popOver</td>
+                        <td>Não (Se utilizar 'header-template')</td>
+                    </tr>
+                    <tr>
+                        <td>trigger</td>
+                        <td>Como Disparar o popOver [auto(default), click, hover, focus, manual]</td>
+                        <td>Não</td>
+                    </tr>
+                    <tr>
+                        <td>posicao</td>
+                        <td>Disposição do popouver [top | bottom | left | right | auto(default)]</td>
+                        <td>Não</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </tab>
+    <tab heading="Html - Exemplo">
+        <div class="panel-body">
+            <copyboard id="copycode2" copiar-de="copyLocal2"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyLocal2">
+<code>&lt;div class="row"&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading"&gt;PopOver Simples (Click)&lt;/div&gt;
+            &lt;div class="panel-body"&gt;
+                &lt;a href="" id="Simple" advanced-popover id-pop-over="Arrgh"
+                   title="Arrgh!" content="Urrgh, urrgh but the Arrgh!"
+                   ng-click="abrirPopOver()"
+                   class="btn btn-danger"&gt;Mostrar Arrgh&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading"&gt;PopOver Simples (Tipo ToolTip)&lt;/div&gt;
+            &lt;div class="panel-body"&gt;
+                &lt;a href="" id="Tooltip" advanced-popover id-pop-over="Orrgh"
+                   title="Orrgh!" content="Urrgh, arrgh but the Orrgh!"
+                   posicao="left" ng-mouseover="abrirPopOver()" ng-mouseleave="fecharPopOver()"
+                   class="btn btn-info"&gt;Mostrar Orrgh&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading"&gt;PopOver Cabeçalho e Corpo Customizavel&lt;/div&gt;
+            &lt;div class="panel-body"&gt;
+                &lt;a href="" id="Advanced" advanced-popover body-template="templateBody.html"
+                   header-template="templateHeader.html" id-pop-over="Urrgh" ng-click="abrirPopOver()"
+                   class="btn btn-success"&gt;Mostrar Urrgh&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row"&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading"&gt;PopOver só Corpo Customizavel&lt;/div&gt;
+            &lt;div class="panel-body"&gt;
+                &lt;a href="" id="bodyCuston" advanced-popover id-pop-over="CorpoCustomizavel"
+                   title="Orrgh!" body-template="templateBody.html"
+                   ng-click="abrirPopOver()"
+                   class="btn btn-warning"&gt;Mostrar Orrgh&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading"&gt;PopOver só Cabeçalho Customizavel&lt;/div&gt;
+            &lt;div class="panel-body"&gt;
+                &lt;a href="" id="headerCuston" advanced-popover content="Urrgh, urrgh but the Arrgh!"
+                   header-template="templateHeader.html" id-pop-over="CabecalhoCustomizavel" ng-click="abrirPopOver()"
+                   class="btn btn-primary"&gt;Mostrar Urrgh&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading"&gt;PopOver Direções&lt;/div&gt;
+            &lt;div class="panel-body"&gt;
+                &lt;a href="" id="left" advanced-popover id-pop-over="leftPopover" posicao="left"
+                   title="Left!" content="The Left Urrgh!"
+                   ng-click="abrirPopOver()" class="btn btn-default"&gt;&lt;&lt;/a&gt;
+                &lt;a href="" id="top" advanced-popover id-pop-over="topPopover" posicao="top"
+                   title="Top!" content="The Top Urrgh!"
+                   ng-click="abrirPopOver()" class="btn btn-default"&gt;^&lt;/a&gt;
+                &lt;a href="" id="Bottom" advanced-popover id-pop-over="BottomPopover" posicao="bottom"
+                   title="Bottom!" content="The Bottom Urrgh!"
+                   ng-click="abrirPopOver()" class="btn btn-default"&gt; V &lt;/a&gt;
+                &lt;a href="" id="right" advanced-popover id-pop-over="rightPopover" posicao="right"
+                   title="Right!" content="The Right Urrgh!"
+                   ng-click="abrirPopOver()" class="btn btn-default"&gt; &gt; &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row"&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading"&gt;PopOver num Input (Focus)&lt;/div&gt;
+            &lt;div class="panel-body"&gt;
+                &lt;div class="input-group"&gt;
+                    &lt;span class="input-group-addon"&gt;$&lt;/span&gt;
+                    &lt;input type="text" class="form-control" advanced-popover id="inputMoeda" id-pop-over="inputMessage"
+                           title="Orrgh!" content="Urrgh, Urrgh but the Urrgh!"
+                           ng-focus="abrirPopOver()" trigger="focus"&gt;
+                    &lt;span class="input-group-addon"&gt;.00&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading"&gt;PopOver Advanced num input&lt;/div&gt;
+            &lt;div class="panel-body"&gt;
+                &lt;div class="input-group"&gt;
+                    &lt;span class="input-group-addon"&gt;$&lt;/span&gt;
+                    &lt;input type="text" class="form-control" advanced-popover id="inputMoedaAdv"
+                           id-pop-over="inputMessageAdv"
+                           header-template="templateHeader.html" body-template="templateBody.html"
+                           ng-focus="abrirPopOver()" trigger="focus"&gt;
+                    &lt;span class="input-group-addon"&gt;.00&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading"&gt;PopOver num input (Hover)&lt;/div&gt;
+            &lt;div class="panel-body"&gt;
+                &lt;div class="input-group"&gt;
+                    &lt;span class="input-group-addon"&gt;$&lt;/span&gt;
+                    &lt;input type="text" class="form-control" advanced-popover id="inputMoedaAdvHover"
+                           id-pop-over="inputMessageAdvHover"
+                           title="Orrgh!" content="Urrgh, Urrgh but the Urrgh!" posicao="bottom"
+                           ng-mouseover="abrirPopOver()" ng-mouseleave="fecharPopOver()" trigger="hover"&gt;
+                    &lt;span class="input-group-addon"&gt;.00&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+                </pre>
+        </div>
+    </tab>
+    <tab heading="Html - Templates">
+        <div class="panel-body">
+            <copyboard id="copycode3" copiar-de="copyLocal3"></copyboard>
+                <pre class="prettyprint linenums lang-scm" id="copyLocal3">
+<code>&lt;!-- Cabeçalho do PopOver Advanced --&gt;
+&lt;script type="text/ng-template" id="templateHeader.html"&gt;
+    &lt;div align="left" style="float:left"&gt;
+        <span>{{</span>dynamicPopover<span>}}</span>
+    &lt;/div&gt;
+    &lt;div align="right"&gt;
+        &lt;button id="btn-fechar" class="btn btn-danger" ng-click="fecharPopOver()"&gt;X&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;!-- Corpo do PopOver Advanced --&gt;
+&lt;script type="text/ng-template" id="templateBody.html"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;<span>{{</span>dynamicPopoverTitle<span>}}</span>&lt;/li&gt;
+        &lt;li&gt;The <span>{{</span>dynamicPopoverTitle<span>}}</span>&lt;/li&gt;
+        &lt;li&gt;<span>{{</span>dynamicPopoverTitle<span>}}</span> Great?&lt;/li&gt;
+        &lt;li&gt;
+            A crazy violent zombie, says <span>{{</span>dynamicPopoverTitle<span>}}</span>
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;hr/&gt;
+    &lt;div align="right"&gt;
+        &lt;button id="btn-fechar" class="btn btn-info" ng-click="fecharPopOver()"&gt;Go!&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/script&gt;</code>
+                </pre>
+        </div>
+    </tab>
+</tabset>
+
+<script>
+    loadPrettify();
+    loadTooltip();
 </script>
 
