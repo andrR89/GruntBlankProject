@@ -8,18 +8,26 @@
 
     <div class="panel-body" ng-show="listaCarros.length > 0">
         <div class="table-responsive">
-            <input type="text" class="form-control" placeholder="Pesquise o Carro aqui: (Ano ou modelo)" ng-model="criterio" />
+            <input type="text" class="form-control" placeholder="Pesquise o Carro aqui: (Ano ou modelo)"
+                   ng-model="criterio"/>
             <table class="table table-condensed">
                 <tr>
                     <th class="hidden-xs"><a href="" ng-click="ordenarCarrosPor('ano')">Ano</a></th>
                     <th><a href="" ng-click="ordenarCarrosPor('modelo')">Modelo</a></th>
+                    <th><a href="" ng-click="ordenarCarrosPor('valor')">Valor</a></th>
                     <th>Opções</th>
                 </tr>
-                <tr dir-paginate="carro in listaCarros| filter: criterio | orderBy:campoOrderBy:reverse | itemsPerPage: pageSize" current-page="currentPage">
+                <tr dir-paginate="carro in listaCarros| filter: criterio | orderBy:campoOrderBy:reverse | itemsPerPage: pageSize"
+                    current-page="currentPage">
                     <td class="hidden-xs">{{carro.ano}}</td>
-                    <td><a href="" ng-click="showCarro(carro)"  data-toggle="modal"  data-target="#carroModal">{{carro.modelo}}</a></td>
-                    <td><a href="" ng-click="excluirCarro(carro)" class="glyphicon glyphicon-remove"></a>
-                        <a  scroll-to="cadastro" ng-click="editarCarro(carro);" class="glyphicon glyphicon glyphicon-pencil"></a>
+                    <td><a href="" ng-click="showCarro(carro)" data-toggle="modal" data-target="#carroModal">{{carro.modelo}}</a>
+                    </td>
+                    <td class="hidden-xs" ng-show="carro.valor">{{carro.valor | currency:"USD$"}}</td>
+                    <td class="hidden-xs" ng-show="!carro.valor">N/A</td>
+                    <td><a href="" data-toggle="modal" ng-click="showCarro(carro)" data-target="#carroModalEx"
+                           class="glyphicon glyphicon-remove" ng-click="excluirCarro(carro)"></a>
+                        <a scroll-to="cadastro" ng-click="editarCarro(carro);"
+                           class="glyphicon glyphicon glyphicon-pencil"></a>
                     </td>
                 </tr>
                 <tfoot>
@@ -29,40 +37,8 @@
                 </tfoot>
             </table>
         </div>
-        <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="shared/utils/dirPagination.tpl.html"></dir-pagination-controls>
+        <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"
+                                 template-url="shared/utils/dirPagination.tpl.html"></dir-pagination-controls>
 
     </div>
 </div>
-
-<div class="modal fade" id="carroModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" ng-click="cleanShow();" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                <h4 class="modal-title" id="myModalLabel">{{carroShow.modelo}}</h4>
-            </div>
-            <div class="modal-body">
-                <image src="{{carroShow.imageURL}}" alt="Imagem Não encontrada!" class="hidden-xs"/>
-
-                <div class="visible-xs">
-                    <a href="{{carroShow.imageURL}}">
-                        <image src="shared/images/mamute.png" alt="Imagem Não encontrada!" />
-                    </a>
-                    <br/>
-                    Clique no Mamute para ver a Foto!
-                </div>
-
-                <h3> {{carroShow.ano}}</h3>
-            </div>
-            <div class="modal-footer">
-                <table class="table">
-                    <tr>
-                        <td class="tdDescriptionModal">Fabricante: </td>
-                        <td class="tdValueModal">{{carroShow.fabricante.nome}}</td>
-                        <td class="tdDescriptionModal">País: </td>
-                        <td class="tdValueModal">{{carroShow.fabricante.pais}}</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>

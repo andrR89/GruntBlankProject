@@ -6,7 +6,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "120171.00"
     },
     {
         "ano": 1966,
@@ -15,7 +16,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "359775.00"
     },
     {
         "ano": 1968,
@@ -24,7 +26,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "744210.00"
     },
     {
         "ano": 1969,
@@ -33,7 +36,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "57443.00"
     },
     {
         "ano": 1969,
@@ -42,7 +46,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "148785.00"
     },
     {
         "ano": 1970,
@@ -51,7 +56,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "54414.00"
     },
     {
         "ano": 1973,
@@ -60,7 +66,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "31423.00"
     },
     {
         "ano": 1974,
@@ -69,7 +76,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "1113000.00"
     },
     {
         "ano": 1976,
@@ -78,7 +86,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "78370.00"
     },
     {
         "ano": 1981,
@@ -87,7 +96,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "35678.00"
     },
     {
         "ano": 1988,
@@ -96,7 +106,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "329975.00"
     },
     {
         "ano": 1990,
@@ -105,7 +116,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "92075.00"
     },
     {
         "ano": 2000,
@@ -114,7 +126,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "149995.00"
     },
     {
         "ano": 2003,
@@ -123,7 +136,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "109995.00"
     },
     {
         "ano": 2008,
@@ -132,7 +146,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "1500000.00"
     },
     {
         "ano": 2008,
@@ -150,7 +165,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "397500.00"
     },
     {
         "ano": 2012,
@@ -159,7 +175,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "2200000.00"
     },
     {
         "ano": 2013,
@@ -168,7 +185,8 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "4100000.00"
     },
     {
         "ano": 2013,
@@ -186,6 +204,7 @@
         "fabricante": {
             "nome": "Lamborghini",
             "pais": "Itália"
-        }
+        },
+        "valor": "241945.00"
     }
 ]

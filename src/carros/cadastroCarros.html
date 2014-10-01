@@ -1,39 +1,97 @@
-
-<div class="panel panel-default" >
+<div class="panel panel-default">
     <div class="panel-heading" id="cadastroCarros">
         Cadastro
     </div>
     <div class="panel-body">
         <ul class="list-group" ng-show="carroForm.$invalid">
-            <li class="list-group-item list-group-item-danger" ng-hide="carroForm.modelo.$valid || carroForm.modelo.$pristine">Insira o modelo.</li>
-            <li class="list-group-item list-group-item-danger" ng-show="carroForm.ano.$invalid && carroForm.ano.$dirty">Selecione o ano.</li>
-            <li class="list-group-item list-group-item-danger" ng-show="carroForm.fabricante.$invalid && carroForm.fabricante.$dirty">Selecione o Fabricante.</li>
+            <li class="list-group-item list-group-item-danger"
+                ng-hide="carroForm.modelo.$valid || carroForm.modelo.$pristine">Insira o modelo.
+            </li>
+            <li class="list-group-item list-group-item-danger"
+                ng-hide="carroForm.valor.$valid || carroForm.valor.$pristine">Insira o valor.
+            </li>
+            <li class="list-group-item list-group-item-danger" ng-show="carroForm.ano.$invalid && carroForm.ano.$dirty">
+                Selecione o ano.
+            </li>
+            <li class="list-group-item list-group-item-danger"
+                ng-show="carroForm.fabricante.$invalid && carroForm.fabricante.$dirty">Selecione o Fabricante.
+            </li>
         </ul>
         <form name="carroForm" novalidate>
-            <div class="input-group input-group-sm">
-                <span class="input-group-addon glyphicon glyphicon-plus"></span>
-                <select class="form-control" name="ano" ng-model="carro.ano" ng-options="ano for ano in anos" ng-required="true">
+
+            <div class="form-group">
+                <label for="ano">Ano</label>
+                <select class="form-control" name="ano" ng-model="carro.ano" ng-options="ano for ano in anos"
+                        ng-required="true" id="ano">
                     <option value="">Selecione o Ano</option>
                 </select>
             </div>
 
-            <div class="input-group input-group-sm">
-                <span class="input-group-addon glyphicon glyphicon-plus"></span>
-                <input class="form-control" name="modelo" ng-model="carro.modelo" maxlength="50" placeholder="Modelo:"
+            <div class="form-group">
+                <label for="Modelo">Modelo</label>
+                <input class="form-control" name="modelo" ng-model="carro.modelo" maxlength="50"
+                       placeholder="Escolha um TOP!" id="modelo"
                        ng-required="true"/>
             </div>
-            
-            <div class="input-group input-group-sm">
-                <span class="input-group-addon glyphicon glyphicon-plus"></span>
-                <select class="form-control" name="fabricante" ng-model="carro.fabricante" ng-options="fabricante.nome for fabricante in fabricantes" ng-required="true">
+
+            <div class="form-group">
+                <label for="valor">Valor</label>
+                <input id="valor" class="form-control" name="valor" ng-model="carro.valor" ng-required="true"
+                       placeholder="Em Dollares!"/>
+            </div>
+
+            <div class="form-group">
+                <label for="fabricante">Fabricante</label>
+                <select id="fabricante" class="form-control" name="fabricante" ng-model="carro.fabricante"
+                        ng-options="fabricante.nome for fabricante in fabricantes" ng-required="true">
                     <option value="">Selecione o Fabricante</option>
                 </select>
             </div>
-            
-            <button ng-click="adicionarCarro(carro)"
-                    class="btn btn-info" ng-disabled="carroForm.$invalid"> Adicionar
-            </button>
+
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-6">
+                    <button class="btn btn-success" data-toggle="modal" data-target="#carroModalAdd"
+                            class="btn btn-info" ng-disabled="carroForm.$invalid"> Adicionar
+                    </button>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-6">
+                    <button ng-click="limparCarro()" class="btn btn-warning"
+                            ng-disabled="carroForm.$pristine"> Limpar Campos
+                    </button>
+                </div>
+            </div>
         </form>
         <a class="visible-xs" scroll-to="topo"> Voltar ao top </a>
+    </div>
+</div>
+
+
+<div class="modal fade" id="carroModalAdd" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                <h4 class="modal-title" id="myModalLabelX">Confirmação</h4>
+            </div>
+            <div class="modal-body">
+                <h4><span class="label label-info"> Dados do Carro: </span></h4>
+                <dl class="dl-horizontal">
+                    <dt>Modelo</dt>
+                    <dd>{{carro.modelo}}</dd>
+                    <dt>Ano</dt>
+                    <dd>{{carro.ano}}</dd>
+                    <dt>Valor</dt>
+                    <dd>{{carro.valor | currency:"USD$"}}</dd>
+                    <dt>Fabricante</dt>
+                    <dd>{{carro.fabricante.nome}}</dd>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="adicionarCarro(carro)"
+                        aria-hidden="true">Sim
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Não</button>
+            </div>
+        </div>
     </div>
 </div>
