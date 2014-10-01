@@ -26,18 +26,28 @@
                 </button>
                 <h4 class="modal-title" id="myModalLabel">{{carroShow.modelo}}</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" align="center">
                 <image src="{{carroShow.imageURL}}" alt="Imagem Não encontrada!" class="hidden-xs"/>
 
-                <div class="visible-xs">
+                <div class="visible-xs" >
                     <a href="{{carroShow.imageURL}}">
                         <image src="shared/images/mamute.png" alt="Imagem Não encontrada!"/>
                     </a>
                     <br/>
                     Clique no Mamute para ver a Foto!
                 </div>
-
-                <h3> {{carroShow.ano}}</h3>
+                <div class="row hidden-xs" >
+                    <div class=" col-sm-6 col-md-6 col-lg-6">
+                        <h3> {{carroShow.ano}}</h3>
+                    </div>
+                    <div class="col-sm-6  col-md-6 col-lg-6">
+                        <h3> {{carroShow.valor | currency:"USD$"}}</h3>
+                    </div>
+                </div>
+                <div class="row visible-xs" >
+                        <h3> {{carroShow.ano}}</h3>
+                        <h3> {{carroShow.valor | currency:"USD$"}}</h3>
+                </div>
             </div>
             <div class="modal-footer">
                 <table class="table">
@@ -48,6 +58,36 @@
                         <td class="tdValueModal">{{carroShow.fabricante.pais}}</td>
                     </tr>
                 </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="carroModalAdd" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                <h4 class="modal-title" id="myModalLabelX">Confirmação</h4>
+            </div>
+            <div class="modal-body">
+                <h4><span class="label label-info"> Dados do Carro: </span></h4>
+                <dl class="dl-horizontal">
+                    <dt>Modelo</dt>
+                    <dd>{{carro.modelo}}</dd>
+                    <dt>Ano</dt>
+                    <dd>{{carro.ano}}</dd>
+                    <dt>Valor</dt>
+                    <dd>{{carro.valor | currency:"USD$"}}</dd>
+                    <dt>Fabricante</dt>
+                    <dd>{{carro.fabricante.nome}}</dd>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="adicionarCarro(carro)"
+                        aria-hidden="true">Sim
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Não</button>
             </div>
         </div>
     </div>

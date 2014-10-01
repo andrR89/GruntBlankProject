@@ -64,34 +64,3 @@
         <a class="visible-xs" scroll-to="topo"> Voltar ao top </a>
     </div>
 </div>
-
-
-<div class="modal fade" id="carroModalAdd" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                <h4 class="modal-title" id="myModalLabelX">Confirmação</h4>
-            </div>
-            <div class="modal-body">
-                <h4><span class="label label-info"> Dados do Carro: </span></h4>
-                <dl class="dl-horizontal">
-                    <dt>Modelo</dt>
-                    <dd>{{carro.modelo}}</dd>
-                    <dt>Ano</dt>
-                    <dd>{{carro.ano}}</dd>
-                    <dt>Valor</dt>
-                    <dd>{{carro.valor | currency:"USD$"}}</dd>
-                    <dt>Fabricante</dt>
-                    <dd>{{carro.fabricante.nome}}</dd>
-                </dl>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="adicionarCarro(carro)"
-                        aria-hidden="true">Sim
-                </button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Não</button>
-            </div>
-        </div>
-    </div>
-</div>

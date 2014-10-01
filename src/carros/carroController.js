@@ -71,9 +71,7 @@ app.controller('carrosController', ['$scope', 'carrosAPI', '$location', '$anchor
 
     $scope.ordenarCarrosPor = function (campo) {
         $scope.campoOrderBy = campo;
-        console.log($scope.campoOrderBy);
         $scope.reverse = !$scope.reverse;
-        console.log($scope.reverse);
     };
 
     $scope.gotoCadastro = function () {

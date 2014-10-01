@@ -8,8 +8,11 @@
 
     <div class="panel-body" ng-show="listaCarros.length > 0">
         <div class="table-responsive">
-            <input type="text" class="form-control" placeholder="Pesquise o Carro aqui: (Ano ou modelo)"
-                   ng-model="criterio"/>
+            <div class="form-group">
+                <label for="pesquisa">Pesquisar</label>
+                <input id="pesquisa" type="text" class="form-control" placeholder="Pesquise o Carro aqui: (Ano, modelo, valor)"
+                       ng-model="criterio"/>
+            </div>
             <table class="table table-condensed">
                 <tr>
                     <th class="hidden-xs"><a href="" ng-click="ordenarCarrosPor('ano')">Ano</a></th>
